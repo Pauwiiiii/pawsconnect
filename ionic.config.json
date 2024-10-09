@@ -1,0 +1,7 @@
+{
+  "name": "pawsconnect",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
