@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let notification of notifications" (click)="markAsRead(notification)">
+      <ion-label>
+        <h2 [ngClass]="{'unread': !notification.read}">{{ notification.title }}</h2>
+        <p>{{ notification.message }}</p>
+      </ion-label>
+      <ion-badge *ngIf="!notification.read" color="danger">New</ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pet Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img [src]="pet.image" alt="{{ pet.name }}" />
+  <div class="pet-details">
+    <h1>{{ pet.name }}</h1>
+    <h2>{{ pet.age }} years old | {{ pet.gender }} | {{ pet.size }}</h2>
+    <p class="pet-story">{{ pet.story }}</p>
+
+    <div class="medical-history">
+      <div *ngFor="let item of medicalHistory">
+        <ion-icon [name]="item.icon" class="icon"></ion-icon>
+        {{ item.label }}
+      </div>
+    </div>
+
+    <div class="personality-traits">
+      <h3>Motty Personality</h3>
+      <div *ngFor="let trait of pet.personalityTraits" class="trait">
+        <span class="trait-name">{{ trait.name }}</span>
+        <div class="trait-value" [style.width]="trait.value * 100 + '%'"></div>
+      </div>
+    </div>
+  </div>
+</ion-content>

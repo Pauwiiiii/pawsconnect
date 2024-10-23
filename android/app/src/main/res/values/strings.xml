@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">pawsconnect</string>
+    <string name="title_activity_main">pawsconnect</string>
+    <string name="package_name">paws.connect.app</string>
+    <string name="custom_url_scheme">paws.connect.app</string>
+</resources>

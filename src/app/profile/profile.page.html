@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile-content">
+  <div class="profile-header">
+    <ion-avatar class="profile-avatar">
+      <img src="assets/images/avatar.png" alt="User Avatar" />
+    </ion-avatar>
+    <h2>{{ userDetails.username }}</h2>
+  </div>
+
+  <div class="profile-details">
+    <ion-list lines="none" *ngIf="!isEditing">
+      <ion-item>
+        <ion-label position="stacked">First Name</ion-label>
+        <ion-text>{{ userDetails.firstName }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Last Name</ion-label>
+        <ion-text>{{ userDetails.lastName }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Organization Name</ion-label>
+        <ion-text>{{ userDetails.organizationName }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Location</ion-label>
+        <ion-text>{{ userDetails.location }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email Address</ion-label>
+        <ion-text>{{ userDetails.email }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Phone Number</ion-label>
+        <ion-text>{{ userDetails.phoneNumber }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Birthday</ion-label>
+        <ion-text>{{ userDetails.birthday }}</ion-text>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="isEditing" lines="none">
+      <ion-item>
+        <ion-label position="stacked">Username</ion-label>
+        <ion-input [(ngModel)]="userDetails.username" placeholder="Enter username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">First Name</ion-label>
+        <ion-input [(ngModel)]="userDetails.firstName" placeholder="Enter first name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Last Name</ion-label>
+        <ion-input [(ngModel)]="userDetails.lastName" placeholder="Enter last name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Organization Name</ion-label>
+        <ion-input [(ngModel)]="userDetails.organizationName" placeholder="Enter organization"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Location</ion-label>
+        <ion-input [(ngModel)]="userDetails.location" placeholder="Enter location"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email Address</ion-label>
+        <ion-input [(ngModel)]="userDetails.email" placeholder="Enter email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Phone Number</ion-label>
+        <ion-input [(ngModel)]="userDetails.phoneNumber" placeholder="Enter phone number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Birthday</ion-label>
+        <ion-input [(ngModel)]="userDetails.birthday" placeholder="Enter birthday"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div class="profile-actions">
+      <ion-button expand="block" (click)="toggleEdit()">
+        {{ isEditing ? 'Save Changes' : 'Edit Profile' }}
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

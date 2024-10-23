@@ -1,0 +1,96 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f4f8; 
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  img {
+    width: auto; 
+    height: auto; 
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Soft shadow effect
+  }
+  
+  .pet-details {
+    background-color: white; 
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    width: 500%; 
+    max-width: 400px; 
+    text-align: center; 
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 18px;
+    color: #555; 
+  }
+  
+  .pet-story {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #777; 
+  }
+  
+  .medical-history {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+  
+  .medical-history div {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa; 
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    width: 45%; // Adjust width to fit in two columns
+  }
+  
+  .medical-history .icon {
+    margin-right: 8px; 
+    color: #007bff; 
+  }
+  
+  .personality-traits {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .personality-traits h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .trait {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+  
+  .trait-name {
+    font-size: 14px;
+  }
+  
+  .trait-value {
+    width: 70%; // for the visual representation
+  }
+  
+  .trait-value {
+    background-color: #ffc107; 
+    border-radius: 10px;
+    height: 5px; 
+  }
+  

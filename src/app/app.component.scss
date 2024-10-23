@@ -1,0 +1,107 @@
+/* Avatar styles */
+.avatar-icon {
+  width: 50px; /*Avatar Size */
+  height: 50px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.ion-avatar img {
+  border: 4px solid #fdb849; /* Border on Avatar */
+  border-radius: 50%; /* Circle */
+  object-fit: cover;
+  width: 60px; /* Size for avatar*/
+  height: 60px;
+}
+
+/* Profile Name and Email in Menu */
+.ion-label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333; 
+  margin-left: 15px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.ion-label p {
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: #777; 
+}
+
+/* Notification icon style */
+.notification-icon {
+  font-size: 22px;
+  margin-right: 15px;
+  color: white;
+}
+
+/* Menu Item hover and active state */
+ion-item:hover,
+ion-item:focus,
+ion-item.activated {
+  background-color: #5c268c; /* Highlight color on hover/click */
+  color: white; /* Text color change when active */
+   /* Smooth rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ion-item:hover ion-icon,
+ion-item:focus ion-icon,
+ion-item.activated ion-icon {
+  color: #5c268c; /* Change icon color on hover/click */
+}
+
+ion-item:hover ion-label,
+ion-item:focus ion-label,
+ion-item.activated ion-label {
+  color: black; /* Change label text color on hover/click */
+}
+
+/* Bottom Navigation Tabs hover */
+ion-tab-button:hover,
+ion-tab-button:focus,
+ion-tab-button.activated {
+  background-color: #fdb849; /* Highlight color on hover/click */
+  color: white;
+  border-radius: 10px; /* Smooth corners */
+  transition: background-color 0.3s ease;
+}
+
+ion-tab-button:hover ion-icon,
+ion-tab-button:focus ion-icon,
+ion-tab-button.activated ion-icon {
+  color: white; /* Change icon color on hover/click */
+}
+
+ion-tab-button:hover ion-label,
+ion-tab-button:focus ion-label,
+ion-tab-button.activated ion-label {
+  color: white; /* Change label text color on hover/click */
+}
+
+/* Menu Layout Enhancements */
+ion-list {
+  padding: 5px;
+  background-color: whitesmoke; /* Light background for the menu */
+  border-radius: 15px;
+}
+
+ion-item {
+  margin: 1px 0; 
+  padding: 1px;
+}
+
+ion-icon {
+  font-size: 20px; 
+  color: white; 
+}
+
+/* Add subtle shadow to the menu container for depth */
+ion-menu {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+}
+

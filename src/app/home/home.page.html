@@ -1,20 +1,106 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  
+  <!-- Welcoming Text Section -->
+  <div class="centered-text">
+    <h2>Who is waiting for you?</h2>
+    <p>If you want to know more about a pet, just click on its box.</p>
   </div>
+
+  <!-- Pet Category Cards Section -->
+  <ion-grid>
+    <ion-row>
+      <!-- Adopt Pet Card -->
+      <ion-col size="4">
+        <ion-card (click)="goToAdopt()" class="card-link">
+          <ion-card-content class="card-content">
+            <ion-icon name="paw" class="card-icon"></ion-icon>
+            <h5 class="card-title">Adopt Pet</h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Donation Card -->
+      <ion-col size="4">
+        <ion-card (click)="goToDonation()" class="card-link">
+          <ion-card-content class="card-content">
+            <ion-icon name="cash" class="card-icon"></ion-icon>
+            <h5 class="card-title">Donation</h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Lost & Found Card -->
+      <ion-col size="4">
+        <ion-card (click)="goToLost()" class="card-link">
+          <ion-card-content class="card-content">
+            <ion-icon name="alert-circle-outline" class="card-icon"></ion-icon>
+            <h5 class="card-title">Lost & Found</h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- PetCare Card -->
+      <ion-col size="4">
+        <ion-card (click)="goToPetcare()" class="card-link">
+          <ion-card-content class="card-content">
+            <ion-icon name="medkit" class="card-icon"></ion-icon>
+            <h5 class="card-title">Pet Care</h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Events Card -->
+      <ion-col size="4">
+        <ion-card (click)="goToEvent()" class="card-link">
+          <ion-card-content class="card-content">
+            <ion-icon name="calendar" class="card-icon"></ion-icon>
+            <h5 class="card-title">Events</h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- About Us Card -->
+      <ion-col size="4">
+        <ion-card (click)="goToAbout()" class="card-link">
+          <ion-card-content class="card-content">
+            <ion-icon name="information-circle" class="card-icon"></ion-icon>
+            <h5 class="card-title">About us</h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Filter and Reset Button Section -->
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <!-- Filter Button -->
+      <ion-button fill="clear" (click)="openFilter()">
+        <ion-icon name="filter-outline" slot="end"></ion-icon>
+        Filter
+      </ion-button>
+
+      <!-- Reset Filters Button -->
+      <ion-button fill="clear" (click)="resetFilters()">
+        <ion-icon name="refresh" slot="end"></ion-icon>
+        Reset
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Pet List Section -->
+  <ion-grid>
+    <ion-row>
+      <!-- Loop through filteredPets array to display each pet -->
+      <ion-col size="6" *ngFor="let pet of filteredPets">
+        <ion-card (click)="goToPetInfo(pet)" class="pet-card">
+          <img [src]="pet.image" alt="{{ pet.name }}" class="pet-image" />
+          <ion-card-header>
+            <ion-card-title>{{ pet.name }}</ion-card-title>
+            <ion-card-subtitle>{{ pet.age }} years old | {{ pet.gender }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
