@@ -1,16 +1,50 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Lost</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Lost and Found</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Lost</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="lost-content">
+  <ion-card class="post-card">
+    <ion-card-header>
+      <ion-card-title>FIND YOUR PETS NOW!</ion-card-title>
+      <p>Join Our Community: Find Missing Pets</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Image URL</ion-label>
+        <ion-input [(ngModel)]="newPost.image" placeholder="Enter image URL"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Details</ion-label>
+        <ion-input [(ngModel)]="newPost.details" placeholder="Describe your lost pet"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="addPost()" color="secondary">Post</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item *ngFor="let post of lostPosts" class="post-item">
+      <ion-thumbnail slot="start">
+        <img [src]="post.image" alt="Lost Pet" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ post.details }}</h2>
+        <p class="post-user">Posted by: {{ post.user }}</p>
+        <ion-list>
+          <ion-item *ngFor="let comment of post.comments">
+            {{ comment }}
+          </ion-item>
+        </ion-list>
+        <ion-item class="comment-input">
+          <ion-input [(ngModel)]="comment" placeholder="Add a comment"></ion-input>
+          <ion-button (click)="comment ? addComment(post, comment) : null" color="secondary">Comment</ion-button>
+        </ion-item>
+      </ion-label>
+      <ion-button fill="clear" color="danger" (click)="deletePost(post)">Delete</ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>
