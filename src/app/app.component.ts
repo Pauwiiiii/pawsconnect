@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, MenuController } from '@ionic/angular';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { NavController, MenuController, IonTabs } from '@ionic/angular';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -7,10 +7,12 @@ import { Router, NavigationEnd } from '@angular/router';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
   public headerTitle: string = ''; // Dynamically updated header title
   unreadNotificationsCount: number = 0; // Track unread notification count
+  @ViewChild(IonTabs) tabRef!: IonTabs;
+  public homeTabClass: string = '';
 
   profile = {
     name: 'Karino Amo',
@@ -18,9 +20,9 @@ export class AppComponent {
   };
 
   constructor(
-    private navCtrl: NavController, 
-    private menuCtrl: MenuController, 
-    private router: Router
+    private navCtrl: NavController,
+    private menuCtrl: MenuController,
+    private router: Router,
   ) {
     // Listen for navigation events to update the header dynamically
     this.router.events.subscribe((event) => {
@@ -28,6 +30,18 @@ export class AppComponent {
         this.updateHeaderTitle(event.url);
       }
     });
+  }
+
+  async ngAfterViewInit() {
+    if (this.router.url == '/') {
+      this.tabRef.select('home');
+      this.homeTabClass = 'activated';
+    }
+  }
+  async ionTabChange() {
+    if(this.tabRef.getSelected() != 'home'){
+      this.homeTabClass = '';
+    }
   }
 
   // Update header tittle base on the current URL
@@ -42,17 +56,17 @@ export class AppComponent {
       this.headerTitle = 'Lost & Found';
     } else if (url.includes('pet')) {
       this.headerTitle = 'Pet Care';
-    }else if (url.includes('events')) {
+    } else if (url.includes('events')) {
       this.headerTitle = 'Events';
-    }else if (url.includes('message')) {
+    } else if (url.includes('message')) {
       this.headerTitle = 'Message';
-    }else if (url.includes('notification')) {
+    } else if (url.includes('notification')) {
       this.headerTitle = 'Notification';
-    }else if (url.includes('about')) {
+    } else if (url.includes('about')) {
       this.headerTitle = 'About Us';
     } else if (url.includes('profile')) {
       this.headerTitle = 'User Profile';
-    }else if (url.includes('pet-info')) {
+    } else if (url.includes('pet-info')) {
       this.headerTitle = 'Pet Information';
     } else {
       this.headerTitle = 'PawsConnect'; // Default title if no match
