@@ -36,7 +36,7 @@ export class PetPage implements OnInit {
       title: 'First Aid for Pets',
       description: 'Basic first aid knowledge to keep your pet safe.',
       link: 'https://www.avma.org/resources-tools/pet-owners/emergencycare/first-aid-tips-pet-owners',
-      image: 'assets/images/petcare2.jpeg',
+      image: 'assets/images/petcare5.jpeg',
     }
   ];
 

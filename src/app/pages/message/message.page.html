@@ -1,16 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Message</ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button menu="main-menu"></ion-menu-button>
-    </ion-buttons>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Messages</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Message</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="messages-container">
+    <div *ngFor="let message of messages" [ngClass]="{'user-message': message.sender === 'user', 'admin-message': message.sender === 'admin'}" class="message-bubble">
+      <p>{{ message.text }}</p>
+      <span class="timestamp">{{ message.timestamp }}</span>
+    </div>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <div class="message-input-container">
+    <ion-input placeholder="Type a message..." [(ngModel)]="newMessage"></ion-input>
+    <ion-button (click)="sendMessage()" color="primary">
+      <ion-icon name="send"></ion-icon>
+    </ion-button>
+  </div>
+</ion-footer>
