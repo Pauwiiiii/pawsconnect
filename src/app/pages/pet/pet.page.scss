@@ -1,0 +1,76 @@
+ion-header {
+    ion-toolbar {
+      --color: white;
+      ion-title {
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  .intro-text {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 5px;
+    font-size: 0.9rem; 
+    color: #666; 
+  }
+  
+  .article-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1rem 0;
+  }
+  
+  .resource-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    .resource-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 1rem;
+    }
+  
+    .resource-content {
+      flex: 1;
+  
+      .resource-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+      }
+  
+      .resource-description {
+        font-size: 0.9rem;
+        color: #777;
+        margin-top: 0.3rem;
+      }
+    }
+  
+    .chevron-icon {
+      font-size: 1.5rem;
+      color:#fdb849;
+    }
+  }
+  
+  ion-content {
+    --background: #f9f9f9;
+    ion-padding {
+      padding: 1rem;
+    }
+  }
+  

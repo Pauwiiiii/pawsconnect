@@ -27,14 +27,15 @@
 
 .card-title {
   margin-top: 15px;
-  font-size: 12px; 
+  font-size: 11px; 
   color: #333;
 }
 
 /* Centered text styles */
 .centered-text {
   text-align: center;
-  padding: 40px 0; 
+  padding: 20px 0;
+  margin-top: 40px; 
 }
 
 .centered-text h2 {
@@ -46,6 +47,8 @@
 .centered-text p {
   font-size: 16px; 
   color: #666;
+  margin-left: 11px;
+  margin-right: 11px;
 }
 
 /* Button spacing */

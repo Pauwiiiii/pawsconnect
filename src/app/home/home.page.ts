@@ -87,8 +87,8 @@ export class HomePage {
     this.navCtrl.navigateForward('/pet');
   }
 
-  goToEvent() {
-    this.navCtrl.navigateForward('/event');
+  goToEvents() {
+    this.navCtrl.navigateForward('/events');
   }
 
   goToAbout() {
