@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'pet-info',
     loadChildren: () => import('./pet-info/pet-info.module').then( m => m.PetInfoPageModule)
+  },
+  {
+    path: 'faq',
+    loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
   }
 ];
 

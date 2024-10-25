@@ -62,6 +62,8 @@ export class AppComponent implements AfterViewInit {
       this.headerTitle = 'Message';
     } else if (url.includes('notification')) {
       this.headerTitle = 'Notification';
+    } else if (url.includes('faq')) {
+      this.headerTitle = 'FaQs';
     } else if (url.includes('about')) {
       this.headerTitle = 'About Us';
     } else if (url.includes('profile')) {
