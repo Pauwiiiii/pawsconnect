@@ -1,3 +1,4 @@
+
 /* Avatar styles */
 .avatar-icon {
   width: 50px; /*Avatar Size */
@@ -32,31 +33,111 @@
 
 /* Notification icon style */
 .notification-icon {
-  font-size: 22px;
+  font-size: 22px !important;
   margin-right: 15px;
   color: white;
 }
 
-/* Menu Item hover and active state */
-ion-item:hover,
-ion-item:focus,
-ion-item.activated {
-  background-color: #5c268c; /* Highlight color on hover/click */
-  color: white; /* Text color change when active */
-   /* Smooth rounded corners */
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Add subtle shadow to the menu container for depth */
+ion-menu {
+  overflow: hidden;
 }
 
-ion-item:hover ion-icon,
-ion-item:focus ion-icon,
-ion-item.activated ion-icon {
-  color: #5c268c; /* Change icon color on hover/click */
+.menu-header-bg {
+  height: 200px;
+  width: 350px;
+  background: #652E89;
+  box-shadow: 0px 1px 10px rgba(210, 98, 255, 0.5);
+  transform: rotate(-15deg);
+  border-radius: 10px 10px 10px 50px;
+  margin-left: -18px;
+  margin-top: -50px;
+  margin-bottom: 60px;
 }
 
-ion-item:hover ion-label,
-ion-item:focus ion-label,
-ion-item.activated ion-label {
-  color: black; /* Change label text color on hover/click */
+.header-content {
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 7px solid #48106d;
+    margin-right: 14px;
+  }
+
+  h2 {
+    font-weight: 500;
+    color: white;
+    font-size: 16px;
+  }
+
+  p {
+    font-weight: 500;
+    color: #e4e4e4;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+  }
+}
+
+.menu-items {
+  margin: 0px;
+  font-family: "Plus Jakarta Sans";
+
+  ion-icon {
+    margin-right: 20px;
+    color: #652E89;
+
+  }
+
+  ion-label {
+    font-family: "Plus Jakarta Sans";
+  }
+
+  ion-item {
+    margin-bottom: 10px;
+    padding-left: 5px;
+  }
+
+  .active {
+    border-left: 5px solid;
+    color: #652E89;
+    padding-left: 5px;
+
+    ion-icon {
+      color: #652E89;
+    }
+  }
+}
+
+ion-header {
+  ion-toolbar {
+   background: transparent;
+  }
+}
+
+.search-container {
+  padding-right: 12px; /* Adjust padding as needed */
+}
+
+.custom-search {
+  --background: #f0f0f08e; /* Background color */
+  --border-radius: 15px; /* Rounded corners */
+  --padding-start: 16px; /* Left padding */
+  --padding-end: 16px; /* Right padding */
+  --color: #333; /* Input text color */
+  
+
+  margin-top: 10px;
+}
+
+ion-title {
+  font-weight: 640;
+  text-align: center;
 }
 
 /* Bottom Navigation Tabs hover */
@@ -80,28 +161,3 @@ ion-tab-button:focus ion-label,
 ion-tab-button.activated ion-label {
   color: white; /* Change label text color on hover/click */
 }
-
-/* Menu Layout Enhancements */
-ion-list {
-  padding: 5px;
-  background-color: whitesmoke; /* Light background for the menu */
-  border-radius: 15px;
-}
-
-ion-item {
-  margin: 1px 0; 
-  padding: 1px;
-}
-
-ion-icon {
-  font-size: 20px; 
-  color: white; 
-}
-
-/* Add subtle shadow to the menu container for depth */
-ion-menu {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  overflow: hidden;
-}
-
