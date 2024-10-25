@@ -1,0 +1,40 @@
+ion-content {
+    --background: #f9f9f9;
+  }
+  
+  ion-card {
+    margin: 12px;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-card-title {
+    color: #fdb849;
+    font-weight: 600;
+  }
+  
+  ion-card-subtitle {
+    color: #888;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify; /* Justifies text for better readability */
+    margin-bottom: 10px;
+  }
+  
+  ion-avatar {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  a {
+    color: #fdb849;
+    text-decoration: none;
+  }
+  

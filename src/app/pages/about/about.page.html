@@ -1,16 +1,142 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>About</ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button menu="main-menu"></ion-menu-button>
-    </ion-buttons>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>About Us</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">About</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <!-- About the Shelter Section -->
+  <ion-card class="about-card">
+    <ion-card-header>
+      <ion-card-title>Nativity's Stray Animals Rescue Shelter</ion-card-title>
+      <ion-card-subtitle>Puerto Princesa City, Palawan</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Nativity's Stray Animals Rescue Shelter is a non-profit organization dedicated to rescuing, rehabilitating, and rehoming stray animals. Located in Puerto Princesa City, Palawan, we assist adopters in finding new families for stray cats and dogs.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Mission and Vision Section -->
+  <ion-card class="mission-vision-card">
+    <ion-card-header>
+      <ion-card-title>Our Mission & Vision</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Mission:</strong> To rescue, rehabilitate, and rehome stray and rescued animals, ensuring their well-being through advocacy and partnerships focused on animal welfare.</p>
+      <p><strong>Vision:</strong> To create a compassionate future for every rescued animal.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- PawsConnect Information -->
+  <ion-card class="pawsconnect-card">
+    <ion-card-header>
+      <ion-card-title>About PawsConnect</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>PawsConnect is a mobile and web app that helps adopters find their best match among the animals at Nativity's Shelter.</p>
+      <p><strong>Operating Hours:</strong> Monday - Saturday | 9:00 am - 10:00 pm</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Services Section -->
+  <ion-card class="services-card">
+    <ion-card-header>
+      <ion-card-title>Our Services</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <h3>Adopt Pet</h3>
+            <p>Find your ideal pet through a user-friendly adoption process.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>Lost & Found</h3>
+            <p>Helps users locate lost pets or report found animals.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>Pet Care</h3>
+            <p>Provides resources on pet nutrition, grooming, exercise, and health.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>Donation</h3>
+            <p>Support the shelter's mission through a simple, secure donation platform.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>Event</h3>
+            <p>Stay informed about adoption drives, fundraisers, and other events.</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Team Section -->
+  <ion-card class="team-card">
+    <ion-card-header>
+      <ion-card-title>Our Team</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="assets/images/team/team1.png" alt="Ma. Carina Cervantes">
+          </ion-avatar>
+          <ion-label>
+            <h3>Ma. Carina Cervantes</h3>
+            <p>Owner</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="assets/images/team/team2.png" alt="Mark Joseph Liray">
+          </ion-avatar>
+          <ion-label>
+            <h3>Mark Joseph Liray</h3>
+            <p>Co-Owner</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="assets/images/team/team3.png" alt="William Anderson">
+          </ion-avatar>
+          <ion-label>
+            <h3>William Anderson</h3>
+            <p>Staff</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="assets/images/team/team4.png" alt="Amanda Jepson">
+          </ion-avatar>
+          <ion-label>
+            <h3>Amanda Jepson</h3>
+            <p>Staff</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Contact Information -->
+  <ion-card class="contact-card">
+    <ion-card-header>
+      <ion-card-title>Contact Us</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Address:</strong> Sitio Baruang, Bgy. Macarascas, Puerto Princesa City, Palawan 5300, Philippines</p>
+      <p><strong>Call Us:</strong> +6938 927 0317</p>
+      <p><strong>Email Us:</strong> <a href="mailto:marycarinacervantes27&#64;gmail.com">marycarinacervantes27&#64;gmail.com</a></p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
