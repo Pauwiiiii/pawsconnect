@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
-import { FilterPageModule } from '../filter/filter.module'; 
+import { FilterPageModule } from '../pages/filter/filter.module'; 
 
 @NgModule({
   imports: [

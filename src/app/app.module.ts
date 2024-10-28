@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 // Import the FilterPage module
-import { FilterPageModule } from './filter/filter.module'; 
+import { FilterPageModule } from './pages/filter/filter.module'; 
 
 @NgModule({
   declarations: [AppComponent],

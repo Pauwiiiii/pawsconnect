@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
-import { FilterPage } from '../filter/filter.page';
+import { FilterPage } from '../pages/filter/filter.page';
 
 @Component({
   selector: 'app-home',

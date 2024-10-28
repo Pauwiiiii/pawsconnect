@@ -49,16 +49,16 @@ const routes: Routes = [
   },
   {
     path: 'filter',
-    loadChildren: () => import('./filter/filter.module').then( m => m.FilterPageModule)
+    loadChildren: () => import('./pages/filter/filter.module').then( m => m.FilterPageModule)
   },
   {
     path: 'pet-info',
-    loadChildren: () => import('./pet-info/pet-info.module').then( m => m.PetInfoPageModule)
+    loadChildren: () => import('./pages/pet-info/pet-info.module').then( m => m.PetInfoPageModule)
   },
   {
     path: 'faq',
-    loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
-  }
+    loadChildren: () => import('./pages/faq/faq.module').then( m => m.FaqPageModule)
+  },
 ];
 
 @NgModule({
