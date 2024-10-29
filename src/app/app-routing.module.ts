@@ -67,6 +67,10 @@ const routes: Routes = [
     path: 'donation-home',
     loadChildren: () => import('./pages/donation-home/donation-home.module').then( m => m.DonationHomePageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
 ];
 
 @NgModule({
