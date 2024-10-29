@@ -70,6 +70,8 @@ export class AppComponent implements AfterViewInit {
       this.headerTitle = 'User Profile';
     } else if (url.includes('pet-info')) {
       this.headerTitle = 'Pet Information';
+    } else if (url.includes('accountsettings')) {
+      this.headerTitle = 'Account Settings ';
     } else {
       this.headerTitle = 'PawsConnect'; // Default title if no match
     }

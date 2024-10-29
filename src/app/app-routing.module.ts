@@ -59,6 +59,10 @@ const routes: Routes = [
     path: 'faq',
     loadChildren: () => import('./pages/faq/faq.module').then( m => m.FaqPageModule)
   },
+  {
+    path: 'accountsettings',
+    loadChildren: () => import('./pages/accountsettings/accountsettings.module').then( m => m.AccountsettingsPageModule)
+  },
 ];
 
 @NgModule({
