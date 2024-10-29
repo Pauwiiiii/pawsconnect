@@ -1,43 +1,46 @@
-/* src/app/pages/accountsettings/accountsettings.page.scss */
-ion-card.user-account-card {
-    padding: 20px;
-    text-align: center;
-  
-    .center-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-  
-    .profile-avatar {
-      width: 100px;
-      height: 100px;
-      margin: 10px auto;
-    }
-  
-    ion-card-title {
-      font-size: 1.4em;
-      font-weight: bold;
-      color: var(--ion-color-primary);
-    }
-  
-    ion-card-subtitle {
-      font-size: 1.1em;
-      color: var(--ion-color-medium);
-    }
-  }
-  
-  .settings-list {
-    ion-item {
-      --padding-start: 15px;
-      border-radius: 8px;
-      margin: 5px 0;
-      --ion-item-background: var(--ion-color-light);
-  
-      ion-icon {
-        color: var(--ion-color-primary);
-      }
-    }
-  }
-  
+.account-settings-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.user-account-card {
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.center-content {
+  text-align: center;
+}
+
+.profile-avatar {
+  margin: 20px auto;
+  width: 90px;
+  height: 90px;
+  border: 2px solid var(--ion-color-primary);
+}
+
+.profile-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.profile-subtitle {
+  font-size: 0.9rem;
+  color: var(--ion-color-medium);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--ion-color-light);
+  margin: 15px 0;
+}
+
+.settings-list {
+  --ion-item-background: var(--ion-color-light);
+}
+
+.settings-item {
+  --padding-start: 16px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
