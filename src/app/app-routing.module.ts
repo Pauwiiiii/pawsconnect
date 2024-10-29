@@ -63,6 +63,10 @@ const routes: Routes = [
     path: 'accountsettings',
     loadChildren: () => import('./pages/accountsettings/accountsettings.module').then( m => m.AccountsettingsPageModule)
   },
+  {
+    path: 'donation-home',
+    loadChildren: () => import('./pages/donation-home/donation-home.module').then( m => m.DonationHomePageModule)
+  },
 ];
 
 @NgModule({
