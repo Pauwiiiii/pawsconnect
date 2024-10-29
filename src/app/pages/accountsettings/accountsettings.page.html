@@ -26,6 +26,11 @@
         <ion-label>Edit Profile</ion-label>
       </ion-item>
 
+      <ion-item button class="settings-item" (click)="navigateToChangePassword()">
+        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-label>Change Password</ion-label>
+      </ion-item>
+
       <ion-item button class="settings-item" (click)="signOut()" *ngIf="isLoggedIn">
         <ion-icon slot="start" name="log-out-outline"></ion-icon>
         <ion-label>Sign Out</ion-label>

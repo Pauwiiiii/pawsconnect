@@ -84,5 +84,23 @@
         {{ isEditing ? 'Save Changes' : 'Edit Profile' }}
       </ion-button>
     </div>
+
+    <!-- Change Password Section -->
+    <div class="change-password-section">
+      <h3>Change Password</h3>
+      <ion-item>
+        <ion-label position="stacked">Current Password</ion-label>
+        <ion-input type="password" [(ngModel)]="changePasswordForm.currentPassword" placeholder="Enter current password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">New Password</ion-label>
+        <ion-input type="password" [(ngModel)]="changePasswordForm.newPassword" placeholder="Enter new password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Confirm New Password</ion-label>
+        <ion-input type="password" [(ngModel)]="changePasswordForm.confirmPassword" placeholder="Confirm new password"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="changePassword()" color="secondary">Change Password</ion-button>
+    </div>
   </div>
 </ion-content>

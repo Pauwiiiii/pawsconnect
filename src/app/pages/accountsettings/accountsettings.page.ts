@@ -22,6 +22,10 @@ export class AccountSettingsPage {
     this.navCtrl.navigateForward('/login');
   }
 
+  navigateToChangePassword() {
+    this.navCtrl.navigateForward('/profile');
+  }
+
   signOut() {
     this.isLoggedIn = false;
     this.navCtrl.navigateRoot('/login');
