@@ -72,7 +72,7 @@ export class HomePage {
   }
 
   goToDonation() {
-    this.navCtrl.navigateRoot('/donation');
+    this.navCtrl.navigateRoot('/donation-home');
   }
 
   goToLost() {

@@ -72,6 +72,8 @@ export class AppComponent implements AfterViewInit {
       this.headerTitle = 'Pet Information';
     } else if (url.includes('accountsettings')) {
       this.headerTitle = 'Account Settings ';
+    } else if (url.includes('donation-home')) {
+        this.headerTitle = 'Donation ';
     } else {
       this.headerTitle = 'PawsConnect'; // Default title if no match
     }
