@@ -20,4 +20,8 @@ export class LoginPage {
     // Navigate to home or dashboard upon successful Google login
     this.router.navigate(['/home']);
   }
+
+  navigateToSignup() {
+    this.router.navigate(['/signup']); // Navigate to the signup page
+  }
 }
