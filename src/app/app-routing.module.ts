@@ -12,6 +12,15 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
+  },
+  /* path for sign up (Later to config)
+  {
+    path: 'signup',
+    loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupPageModule)
+  },*/
+  {
     path: 'adopt',
     loadChildren: () => import('./pages/adopt/adopt.module').then(m => m.AdoptPageModule)
   },
