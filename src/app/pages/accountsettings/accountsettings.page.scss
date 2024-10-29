@@ -1,0 +1,43 @@
+/* src/app/pages/accountsettings/accountsettings.page.scss */
+ion-card.user-account-card {
+    padding: 20px;
+    text-align: center;
+  
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+  
+    .profile-avatar {
+      width: 100px;
+      height: 100px;
+      margin: 10px auto;
+    }
+  
+    ion-card-title {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: var(--ion-color-primary);
+    }
+  
+    ion-card-subtitle {
+      font-size: 1.1em;
+      color: var(--ion-color-medium);
+    }
+  }
+  
+  .settings-list {
+    ion-item {
+      --padding-start: 15px;
+      border-radius: 8px;
+      margin: 5px 0;
+      --ion-item-background: var(--ion-color-light);
+  
+      ion-icon {
+        color: var(--ion-color-primary);
+      }
+    }
+  }
+  
