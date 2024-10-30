@@ -24,4 +24,8 @@ export class LoginPage {
   navigateToSignup() {
     this.router.navigate(['/signup']); // Navigate to the signup page
   }
+
+  navigateToLogin2() {
+    this.router.navigate(['/login2']); // Navigate to the signup page
+  }
 }
