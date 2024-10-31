@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+
+
+interface LoginResponse {
+  message: string;
+  user?: any; // Use a more specific type if you know the structure of the 'user' object
+}
 
 @Component({
   selector: 'app-login',
@@ -7,17 +14,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  constructor(private router: Router) {}
+  username: string = ''; // Bind these to your input fields in the template
+  password: string = ''; 
+
+  constructor(
+    private router: Router,
+    private authService: AuthService // Inject AuthService
+  ) {}
 
   loginWithEmailPassword() {
-    // Add your login logic here
-    // Navigate to home or dashboard upon successful login
-    this.router.navigate(['/home']);
+    this.authService.login(this.username, this.password).subscribe(
+      (response: LoginResponse) => {
+        if (response.message === "Login successful.") {
+          console.log('Login successful:', response.user);
+          // Navigate to the home page upon successful login
+          this.router.navigate(['/home']);
+        } else {
+          console.error('Login failed:', response.message);
+          // Optionally, show an error message to the user
+        }
+      },
+      (error: any) => {
+        console.error('Error during login:', error);
+        // Handle any errors that may occur
+      }
+    );
   }
 
   loginWithGoogle() {
-    // Add your Google login logic here
-    // Navigate to home or dashboard upon successful Google login
     this.router.navigate(['/home']);
   }
 
@@ -26,6 +50,6 @@ export class LoginPage {
   }
 
   navigateToLogin2() {
-    this.router.navigate(['/login2']); // Navigate to the signup page
+    this.router.navigate(['/login2']); // Navigate to the login2 page
   }
 }
