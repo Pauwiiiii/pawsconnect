@@ -86,7 +86,7 @@ ion-menu {
 
 .menu-items {
   margin: 0px;
-  font-family: "Plus Jakarta Sans";
+  font-family: "Gilroy";
 
   ion-icon {
     margin-right: 20px;
@@ -95,7 +95,7 @@ ion-menu {
   }
 
   ion-label {
-    font-family: "Plus Jakarta Sans";
+    font-family: "Gilroy";
   }
 
   ion-item {
@@ -140,24 +140,40 @@ ion-title {
   text-align: center;
 }
 
-/* Bottom Navigation Tabs hover */
-ion-tab-button:hover,
-ion-tab-button:focus,
-ion-tab-button.activated {
-  background-color: #fdb849; /* Highlight color on hover/click */
-  color: white;
-  border-radius: 10px; /* Smooth corners */
-  transition: background-color 0.3s ease;
+
+ion-tabs {
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-ion-tab-button:hover ion-icon,
-ion-tab-button:focus ion-icon,
-ion-tab-button.activated ion-icon {
-  color: white; /* Change icon color on hover/click */
+ion-tab-bar {
+  height: 60px; /* Set the height for the tab bar */
 }
 
-ion-tab-button:hover ion-label,
-ion-tab-button:focus ion-label,
-ion-tab-button.activated ion-label {
-  color: white; /* Change label text color on hover/click */
+ion-tab-button {
+  --color-selected: #fff; /* Color for the selected tab icon and label */
+  --color: rgba(255, 255, 255, 0.7); /* Color for unselected tab icon and label */
+  font-size: 11px; /* Font size for tab labels */
+  font-weight: 1000;
+  display: flex; /* Aligns items in a row */
+  flex-direction: column; /* Arranges icon and label in a column */
+  align-items: center; /* Centers content horizontally */
+  height: 100%; /* Ensures button fills the entire height of the tab bar */
+  padding: 0; /* Remove default padding to maintain consistent size */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+ion-tab-button ion-icon {
+  font-size: 24px; /* Size of the icons */
+  margin-bottom: 6px; /* Space between the icon and the label */
+}
+
+ion-tab-button:hover {
+  background-color: #e29824; /* Background color on hover */
+  font-weight: 550;
+}
+
+/* Optional: Style for active tab */
+ion-tab-button.tab-selected {
+  background-color: #e29824; /* Background color for the selected tab */
+  color: #652E89 !important;
 }

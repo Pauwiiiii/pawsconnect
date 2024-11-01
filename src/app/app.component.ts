@@ -9,14 +9,16 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent implements AfterViewInit {
 
-  public headerTitle: string = ''; // Dynamically updated header title
-  unreadNotificationsCount: number = 0; // Track unread notification count
+  public headerTitle: string = ''; // Dynamic na header title
+  unreadNotificationsCount: number = 0; // Counter para sa unread notifications
   @ViewChild(IonTabs) tabRef!: IonTabs;
   public homeTabClass: string = '';
+  showHeader: boolean = true; // Control para sa visibility ng header
+  showBottomBar: boolean = true; // Control para sa visibility ng bottom bar
 
   profile = {
     name: 'Karino Amo',
-    email: 'PawsConnect@gmail.com' // Placeholder data; replace with fetched data if needed
+    email: 'PawsConnect@gmail.com' // Placeholder na data; palitan ng fetched data kung kailangan
   };
 
   constructor(
@@ -24,7 +26,7 @@ export class AppComponent implements AfterViewInit {
     private menuCtrl: MenuController,
     private router: Router,
   ) {
-    // Listen for navigation events to update the header dynamically
+    // Nakikinig sa navigation events para i-update ang header at bottom bar
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.updateHeaderTitle(event.url);
@@ -38,19 +40,32 @@ export class AppComponent implements AfterViewInit {
       this.homeTabClass = 'activated';
     }
   }
+
   async ionTabChange() {
-    if(this.tabRef.getSelected() != 'home'){
+    if (this.tabRef.getSelected() != 'home') {
       this.homeTabClass = '';
     }
   }
 
-  // Update header tittle base on the current URL
+  // Dynamic na pag-update ng header title at bottom bar visibility
   updateHeaderTitle(url: string) {
-    if (url.includes('home')) {
+    // I-hide ang header at bottom bar sa specific na pages
+    if (url.includes('login') || url.includes('signup') || url.includes('register') || url.includes('forgot-password')) {
+      this.showHeader = false;
+      this.showBottomBar = false; // Itago ang bottom bar
+      this.showHeader = false;
+      this.headerTitle = ''; // Clear ang title
+      return;
+    } else {
+      this.showBottomBar = true; // Ipakita ang bottom bar sa ibang pages
+    }
+
+    // Mag-set ng header title depende sa page
+    if (url.includes('homes')) {
       this.headerTitle = 'PawsConnect';
     } else if (url.includes('adopt')) {
       this.headerTitle = 'Adopt Pet';
-    } else if (url.includes('donation')) {
+    } else if (url.includes('donation') || url.includes('donation-home')) {
       this.headerTitle = 'Donation';
     } else if (url.includes('lost')) {
       this.headerTitle = 'Lost & Found';
@@ -63,7 +78,7 @@ export class AppComponent implements AfterViewInit {
     } else if (url.includes('notification')) {
       this.headerTitle = 'Notification';
     } else if (url.includes('faq')) {
-      this.headerTitle = 'FaQs';
+      this.headerTitle = 'FAQs';
     } else if (url.includes('about')) {
       this.headerTitle = 'About Us';
     } else if (url.includes('profile')) {
@@ -71,27 +86,24 @@ export class AppComponent implements AfterViewInit {
     } else if (url.includes('pet-info')) {
       this.headerTitle = 'Pet Information';
     } else if (url.includes('accountsettings')) {
-      this.headerTitle = 'Account Settings ';
-    } else if (url.includes('donation-home')) {
-        this.headerTitle = 'Donation ';
+      this.headerTitle = 'Account Settings';
     } else {
-      this.headerTitle = 'PawsConnect'; // Default title if no match
+      this.headerTitle = ''; // Default title kung walang match
     }
   }
 
-  // Navigate to the profile page
+  // Navigate sa profile page
   goToProfile() {
     this.navCtrl.navigateRoot('/profile');
   }
 
-   // Navigate to the notification page
-   openNotifications() {
+  // Navigate sa notification page
+  openNotifications() {
     this.navCtrl.navigateRoot('/notification');
   }
-  
-  // Close the main menu
+
+  // Close ang main menu
   closeMenu() {
     this.menuCtrl.close('main-menu');
   }
-
 }

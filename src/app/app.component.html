@@ -1,28 +1,29 @@
 <ion-app>
   <!-- Top Bar -->
-  <ion-header class="ion-no-border">
+  <ion-header *ngIf="showHeader" class="ion-no-border">
     <ion-toolbar color="primary" class="header-toolbar">
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>{{ headerTitle }}</ion-title>
-      <!-- Notification button with unread badge -->
-      <ion-buttons slot="end" (click)="openNotifications()">
-        <ion-icon class="notification-icon" name="notifications"></ion-icon>
-        <ion-badge class="notification-badge" color="danger" *ngIf="unreadNotificationsCount > 0">
-          {{ unreadNotificationsCount }}
-        </ion-badge>
-      </ion-buttons>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{ headerTitle }}</ion-title>
+        <!-- Notification button with unread badge -->
+        <ion-buttons slot="end" (click)="openNotifications()">
+            <ion-icon class="notification-icon" name="notifications"></ion-icon>
+            <ion-badge class="notification-badge" color="danger" *ngIf="unreadNotificationsCount > 0">
+                {{ unreadNotificationsCount }}
+            </ion-badge>
+        </ion-buttons>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
+
 
   <!-- Main Content -->
   <ion-router-outlet id="main"></ion-router-outlet>
-
+  
   <!-- Bottom Navigation Tabs -->
-  <ion-tabs #myTabs (ionTabsDidChange)="ionTabChange()">
-    <ion-tab-bar slot="bottom" color="primary">
-      <ion-tab-button tab="home" routerLink="/home" class={{homeTabClass}}>
+  <ion-tabs>
+    <ion-tab-bar *ngIf="showBottomBar" slot="bottom" color="primary">
+      <ion-tab-button tab="home" routerLink="/home">
         <ion-icon name="home-outline"></ion-icon>
         <ion-label>Home</ion-label>
       </ion-tab-button>
@@ -40,7 +41,7 @@
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
-
+  
   <!-- Menu Bar -->
   <ion-menu menuId="main-menu" contentId="main">
     <ion-content>
@@ -62,13 +63,13 @@
         <ion-menu-toggle auto-hide="true">
           <ion-item routerLink="/profile" detail="false">
             <ion-icon name="person" slot="start"></ion-icon>
-            <ion-label>View Profile</ion-label>
+            <ion-label>View profile</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle auto-hide="true">
           <ion-item routerLink="/accountsettings" detail="false">
             <ion-icon name="settings" slot="start"></ion-icon>
-            <ion-label>Account Settings</ion-label>
+            <ion-label>Account settings</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle auto-hide="true">
@@ -80,13 +81,13 @@
         <ion-menu-toggle auto-hide="true">
           <ion-item routerLink="/about" detail="false">
             <ion-icon name="information-circle" slot="start"></ion-icon>
-            <ion-label>About Us</ion-label>
+            <ion-label>About us</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle auto-hide="true">
           <ion-item routerLink="/log-out" detail="false">
             <ion-icon name="log-out" slot="start"></ion-icon>
-            <ion-label>Sign Out</ion-label>
+            <ion-label>Sign out</ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
