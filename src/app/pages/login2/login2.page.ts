@@ -20,10 +20,25 @@ export class Login2Page {
   showHeader: boolean = false;      // Declare showHeader
   showBottomBar: boolean = false;   // Declare showBottomBar
 
+   // Variables for password visibility
+   passwordType: string = 'password';
+   passwordIcon: string = 'eye-off';
+
   constructor(
     private router: Router,
     private authService: AuthService
   ) {}
+
+  // Function to toggle password visibility
+  togglePasswordVisibility() {
+    if (this.passwordType === 'password') {
+      this.passwordType = 'text';
+      this.passwordIcon = 'eye';
+    } else {
+      this.passwordType = 'password';
+      this.passwordIcon = 'eye-off';
+    }
+  }
 
   loginWithEmailPassword() {
     // Check if email and password fields are empty

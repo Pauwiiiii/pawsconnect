@@ -18,8 +18,20 @@
     </ion-item>
 
     <ion-item class="box">
-      <ion-input [(ngModel)]="password" name="password" type="password" placeholder="Password" required></ion-input>
+      <ion-input 
+        [(ngModel)]="password" 
+        [type]="passwordType"  
+        name="password" 
+        placeholder="Password" 
+        required>
+      </ion-input>
+      <ion-icon 
+        slot="end" 
+        [name]="passwordIcon"  
+        (click)="togglePasswordVisibility()"> <!-- Call the toggle function on click -->
+      </ion-icon>
     </ion-item>
+    
     <p *ngIf="emailError" class="error-message">User not found</p>
     <p *ngIf="passwordError" class="error-message">Wrong password or email</p>
 
