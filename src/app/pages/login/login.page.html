@@ -1,52 +1,33 @@
-<ion-content class="login-container">
-  <div class="login-card">
-    <ion-card class="login-form">
-      <ion-card-header>
-        <ion-card-title>Welcome to PawsConnect</ion-card-title>
-        <p class="subtitle">Log in to continue</p>
-      </ion-card-header>
-
-      <ion-card-content>
-        <ion-item lines="none" class="input-item">
-          <ion-label position="floating">Email</ion-label>
-          <ion-input 
-            type="email" 
-            placeholder="Enter your email" 
-            [(ngModel)]="username" 
-            name="username" 
-            id="username">
-          </ion-input>
-        </ion-item>
-        <ion-item lines="none" class="input-item">
-          <ion-label position="floating">Password</ion-label>
-          <ion-input 
-            type="password" 
-            placeholder="Enter your password" 
-            [(ngModel)]="password" 
-            name="password" 
-            id="password">
-          </ion-input>
-        </ion-item>
-
-        <ion-button expand="block" color="primary" (click)="loginWithEmailPassword()" class="login-btn">
-          Login
-        </ion-button>
-
-        <div class="divider">or</div>
-
-        <ion-button expand="block" fill="outline" color="medium" (click)="loginWithGoogle()" class="google-btn">
-          <ion-icon name="logo-google"></ion-icon>
-          Connect with Google
-        </ion-button>
-      </ion-card-content>
-    </ion-card>
-
-    <div class="sign-up-section">
-      <p>Don’t have an account? 
-        <ion-button expand="full" color="light" (click)="navigateToSignup()">Sign Up</ion-button>
-      </p>
+<ion-content class="color">
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="arrow-back"></ion-icon>
     </div>
-
-    <ion-button expand="full" color="light" (click)="navigateToLogin2()">Log In Dito 2</ion-button>
+    <div id="logo">
+      <img src="../../../assets/images/logo.png" alt="Logo">
+      <h2>PawsConnect</h2>
+    </div>
   </div>
+
+  <ion-card class="ion-padding">
+    <ion-card-content>
+        <h1>Welcome to PawsConnect</h1>
+        <p>Bringing compassionate hearts <br>together with loving paws.</p>
+
+        <ion-button class="signin" expand="block" (click)="navigateToLogin2()">Login</ion-button>
+        <ion-button class="signup" expand="block" (click)="navigateToSignup()">Sign up</ion-button>
+
+        <div class="line-text">
+          <span class="lines"></span>
+          <span class="text"> or connect using</span>
+        </div>
+
+        <ion-button class="google" expand="block">
+          <img src="../../../assets/images/google.png" alt="Google Logo" style="width: 24px; height: 24px; margin-right: 8px;">
+          Sign in with Google
+        </ion-button>
+      
+        
+    </ion-card-content>
+  </ion-card>
 </ion-content>
