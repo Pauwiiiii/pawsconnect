@@ -33,4 +33,8 @@ export class SignupPage {
   navigateToLogin() {
     this.router.navigate(['/login']); // Navigate back to the login page
   }
+
+  navigateToSignup1() {
+    this.router.navigate(['/signup1']); // Navigate to the signup page
+  }
 }

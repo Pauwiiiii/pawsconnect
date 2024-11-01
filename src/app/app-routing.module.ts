@@ -72,12 +72,20 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
+    path: 'login2',
+    loadChildren: () => import('./pages/login2/login2.module').then( m => m.Login2PageModule)
+  },
+  {
     path: 'signup',
     loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
   },
   {
-    path: 'login2',
-    loadChildren: () => import('./pages/login2/login2.module').then( m => m.Login2PageModule)
+    path: 'signup1',
+    loadChildren: () => import('./pages/signup1/signup1.module').then( m => m.Signup1PageModule)
+  },
+  {
+    path: 'signup2',
+    loadChildren: () => import('./pages/signup2/signup2.module').then( m => m.Signup2PageModule)
   },
 ];
 
