@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { authGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
   },
   {
     path: 'adopt',
-    loadChildren: () => import('./pages/adopt/adopt.module').then(m => m.AdoptPageModule)
+    loadChildren: () => import('./pages/adopt/adopt.module').then(m => m.AdoptPageModule),
+    canActivate: [authGuard] // Protect adopt page
   },
   {
     path: 'donation',
@@ -21,7 +23,8 @@ const routes: Routes = [
   },
   {
     path: 'lost',
-    loadChildren: () => import('./pages/lost/lost.module').then(m => m.LostPageModule)
+    loadChildren: () => import('./pages/lost/lost.module').then(m => m.LostPageModule),
+    canActivate: [authGuard] // Protect lost page
   },
   {
     path: 'pet',
@@ -33,11 +36,13 @@ const routes: Routes = [
   },
   {
     path: 'message',
-    loadChildren: () => import('./pages/message/message.module').then(m => m.MessagePageModule)
+    loadChildren: () => import('./pages/message/message.module').then(m => m.MessagePageModule),
+    canActivate: [authGuard]
   },
   {
     path: 'notification',
-    loadChildren: () => import('./pages/notification/notification.module').then(m => m.NotificationPageModule)
+    loadChildren: () => import('./pages/notification/notification.module').then(m => m.NotificationPageModule),
+    canActivate: [authGuard]
   },
   {
     path: 'about',
@@ -45,47 +50,49 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule),
+    canActivate: [authGuard] // Protect profile page
   },
   {
     path: 'filter',
-    loadChildren: () => import('./pages/filter/filter.module').then( m => m.FilterPageModule)
+    loadChildren: () => import('./pages/filter/filter.module').then(m => m.FilterPageModule)
   },
   {
     path: 'pet-info',
-    loadChildren: () => import('./pages/pet-info/pet-info.module').then( m => m.PetInfoPageModule)
+    loadChildren: () => import('./pages/pet-info/pet-info.module').then(m => m.PetInfoPageModule)
   },
   {
     path: 'faq',
-    loadChildren: () => import('./pages/faq/faq.module').then( m => m.FaqPageModule)
+    loadChildren: () => import('./pages/faq/faq.module').then(m => m.FaqPageModule)
   },
   {
     path: 'accountsettings',
-    loadChildren: () => import('./pages/accountsettings/accountsettings.module').then( m => m.AccountsettingsPageModule)
+    loadChildren: () => import('./pages/accountsettings/accountsettings.module').then(m => m.AccountsettingsPageModule),
+    canActivate: [authGuard] // Protect account settings page
   },
   {
     path: 'donation-home',
-    loadChildren: () => import('./pages/donation-home/donation-home.module').then( m => m.DonationHomePageModule)
+    loadChildren: () => import('./pages/donation-home/donation-home.module').then(m => m.DonationHomePageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'login2',
-    loadChildren: () => import('./pages/login2/login2.module').then( m => m.Login2PageModule)
+    loadChildren: () => import('./pages/login2/login2.module').then(m => m.Login2PageModule)
   },
   {
     path: 'signup',
-    loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
+    loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupPageModule)
   },
   {
     path: 'signup1',
-    loadChildren: () => import('./pages/signup1/signup1.module').then( m => m.Signup1PageModule)
+    loadChildren: () => import('./pages/signup1/signup1.module').then(m => m.Signup1PageModule)
   },
   {
     path: 'signup2',
-    loadChildren: () => import('./pages/signup2/signup2.module').then( m => m.Signup2PageModule)
+    loadChildren: () => import('./pages/signup2/signup2.module').then(m => m.Signup2PageModule)
   },
 ];
 

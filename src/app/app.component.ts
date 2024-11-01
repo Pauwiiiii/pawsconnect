@@ -57,6 +57,7 @@ export class AppComponent implements AfterViewInit {
       this.headerTitle = ''; // Clear ang title
       return;
     } else {
+      this.showHeader = true;
       this.showBottomBar = true; // Ipakita ang bottom bar sa ibang pages
     }
 

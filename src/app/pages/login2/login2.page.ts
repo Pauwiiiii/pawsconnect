@@ -17,6 +17,8 @@ export class Login2Page {
   password: string = '';
   emailError: boolean = false;
   passwordError: boolean = false;
+  showHeader: boolean = false;      // Declare showHeader
+  showBottomBar: boolean = false;   // Declare showBottomBar
 
   constructor(
     private router: Router,
@@ -35,13 +37,16 @@ export class Login2Page {
       this.emailError = false;
       return;
     }
-
-    // If fields are filled, proceed with the login
+  
+    // Proceed with the login
     this.authService.login(this.email, this.password).subscribe(
       (response: LoginResponse) => {
         if (response.message === "Login successful.") {
           console.log('Login successful:', response.user);
+          this.authService.setLoginState(true); // Set the login state
           this.router.navigate(['/home']);
+          this.showHeader = true;
+          this.showBottomBar = true;
           this.emailError = false;
           this.passwordError = false;
         } else {
