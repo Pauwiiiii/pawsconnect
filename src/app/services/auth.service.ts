@@ -1,4 +1,3 @@
-// auth.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost/pawsconnect_api/login.php'; //API URL
+  private apiUrl = 'http://localhost/pawsconnect_api/login.php'; // API URL
 
   constructor(private http: HttpClient) {}
 
@@ -17,8 +16,19 @@ export class AuthService {
     return this.http.post(this.apiUrl, body);
   }
 
-  // Add a method to set the login state
+  // Method to set the login state
   setLoginState(isLoggedIn: boolean): void {
     localStorage.setItem('isLoggedIn', String(isLoggedIn));
+  }
+
+  // Method to check if the user is logged in
+  isAuthenticated(): boolean {
+    return localStorage.getItem('isLoggedIn') === 'true';
+  }
+
+  // Method to log out
+  logout(): void {
+    this.setLoginState(false); // Set the login state to false
+    localStorage.removeItem('user'); // Clear user data if stored
   }
 }

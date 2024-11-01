@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { NavController, MenuController, IonTabs } from '@ionic/angular';
 import { Router, NavigationEnd } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,7 @@ export class AppComponent implements AfterViewInit {
     private navCtrl: NavController,
     private menuCtrl: MenuController,
     private router: Router,
+    private authService: AuthService
   ) {
     // Nakikinig sa navigation events para i-update ang header at bottom bar
     this.router.events.subscribe((event) => {
@@ -106,5 +108,11 @@ export class AppComponent implements AfterViewInit {
   // Close ang main menu
   closeMenu() {
     this.menuCtrl.close('main-menu');
+  }
+
+
+  signOut() {
+    this.authService.logout(); // Call the logout function from AuthService
+    this.navCtrl.navigateRoot('/login'); // Redirect to the login page after signing out
   }
 }
