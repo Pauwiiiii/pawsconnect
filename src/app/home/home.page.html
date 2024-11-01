@@ -1,75 +1,87 @@
 <ion-content>
-  
-  <!-- Welcoming Text Section -->
-  <div class="centered-text">
-    <h2>Who is waiting for you?</h2>
-    <p>If you want to know more about a pet, just click on its box.</p>
+  <div class="top-section ion-padding">
+    <div class="title">
+      <h2>Welcome to <br>PawsConnect</h2>
+      <p class="title-top">Fostering connections between adopters and rescued animals.</p>
+      <p class="title-bottom">Bringing compassionate hearts together with loving paws.</p>
+      <div class="background-image"></div>
+    </div>
+    <div class="action-buttons">
+      <ion-button class="adopt">
+        <ion-icon name="paw"></ion-icon><span>Adopt now</span>
+      </ion-button>
+    </div>
   </div>
-
+  
   <!-- Pet Category Cards Section -->
   <ion-grid>
-    <ion-row>
+    <ion-row class="ion-justify-content-center">
       <!-- Adopt Pet Card -->
-      <ion-col size="4">
-        <ion-card (click)="goToAdopt()" class="card-link">
+      <ion-col size="3.8">
+        <ion-card (click)="goToAdopt()" class="card-links">
           <ion-card-content class="card-content">
-            <ion-icon name="paw" class="card-icon"></ion-icon>
+            <ion-icon name="paw-outline" class="card-icon"></ion-icon>
             <h5 class="card-title">Adopt Pet</h5>
           </ion-card-content>
         </ion-card>
       </ion-col>
 
       <!-- Donation Card -->
-      <ion-col size="4">
-        <ion-card (click)="goToDonation()" class="card-link">
+      <ion-col size="3.8">
+        <ion-card (click)="goToDonation()" class="card-links">
           <ion-card-content class="card-content">
-            <ion-icon name="cash" class="card-icon"></ion-icon>
+            <ion-icon name="heart-outline" class="card-icon"></ion-icon>
             <h5 class="card-title">Donation</h5>
           </ion-card-content>
         </ion-card>
       </ion-col>
 
       <!-- Lost & Found Card -->
-      <ion-col size="4">
-        <ion-card (click)="goToLost()" class="card-link">
+      <ion-col size="3.8">
+        <ion-card (click)="goToLost()" class="card-links">
           <ion-card-content class="card-content">
             <ion-icon name="alert-circle-outline" class="card-icon"></ion-icon>
-            <h5 class="card-title">Lost & Found</h5>
+            <h5 class="card-titles">Lost & Found</h5>
           </ion-card-content>
         </ion-card>
       </ion-col>
 
       <!-- PetCare Card -->
-      <ion-col size="4">
+      <ion-col size="3.8">
         <ion-card (click)="goToPetcare()" class="card-link">
           <ion-card-content class="card-content">
-            <ion-icon name="medkit" class="card-icon"></ion-icon>
+            <ion-icon name="medkit-outline" class="card-icon"></ion-icon>
             <h5 class="card-title">Pet Care</h5>
           </ion-card-content>
         </ion-card>
       </ion-col>
 
       <!-- Events Card -->
-      <ion-col size="4">
-        <ion-card (click)="goToEvents()" class="card-link">
+      <ion-col size="3.8">
+        <ion-card (click)="goToEvent()" class="card-link">
           <ion-card-content class="card-content">
-            <ion-icon name="calendar" class="card-icon"></ion-icon>
+            <ion-icon name="calendar-outline" class="card-icon"></ion-icon>
             <h5 class="card-title">Events</h5>
           </ion-card-content>
         </ion-card>
       </ion-col>
 
       <!-- About Us Card -->
-      <ion-col size="4">
+      <ion-col size="3.8">
         <ion-card (click)="goToAbout()" class="card-link">
           <ion-card-content class="card-content">
-            <ion-icon name="information-circle" class="card-icon"></ion-icon>
+            <ion-icon name="information-circle-outline" class="card-icon"></ion-icon>
             <h5 class="card-title">About us</h5>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <div class="centered-text">
+    <h2>Who is waiting for you?</h2>
+    <p>If you want to know more about a pet, just click on its box.</p>
+  </div>
 
   <!-- Filter and Reset Button Section -->
   <ion-toolbar>

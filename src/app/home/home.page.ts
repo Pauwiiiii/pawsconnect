@@ -10,12 +10,12 @@ import { FilterPage } from '../pages/filter/filter.page';
 })
 export class HomePage {
   pets = [
-    { name: 'Tommy', species: 'dog', kind: 'small', age: 7, gender: 'Male', image: 'assets/images/tommy.png' },
-    { name: 'Alfred', species: 'cat', kind: 'medium', age: 4, gender: 'Male', image: 'assets/images/cat.jpeg' },
-    { name: 'Motty', species: 'dog', kind: 'large', age: 5, gender: 'Male', image: 'assets/images/tommy.png' },
-    { name: 'Cindy', species: 'cat', kind: 'small', age: 9, gender: 'Female', image: 'assets/images/cat.jpeg' },
-    { name: 'Bell', species: 'dog', kind: 'medium', age: 7, gender: 'Male', image: 'assets/images/tommy.png' },
-    { name: 'Trexy', species: 'cat', kind: 'large', age: 1, gender: 'Female', image: 'assets/images/cat.jpeg' }
+    { name: 'Tommy', species: 'dog', kind: 'small', age: 7, gender: 'Male', image: 'assets/images/dog1.png' },
+    { name: 'Alfred', species: 'cat', kind: 'medium', age: 4, gender: 'Male', image: 'assets/images/cat1.png' },
+    { name: 'Motty', species: 'dog', kind: 'large', age: 5, gender: 'Male', image: 'assets/images/dog2.png' },
+    { name: 'Cindy', species: 'cat', kind: 'small', age: 9, gender: 'Female', image: 'assets/images/cat2.png' },
+    { name: 'Bell', species: 'dog', kind: 'medium', age: 7, gender: 'Male', image: 'assets/images/dog3.png' },
+    { name: 'Trexy', species: 'cat', kind: 'large', age: 1, gender: 'Female', image: 'assets/images/cat3.png' }
   ];
 
   filteredPets = [...this.pets];
@@ -87,7 +87,7 @@ export class HomePage {
     this.navCtrl.navigateForward('/pet');
   }
 
-  goToEvents() {
+  goToEvent() {
     this.navCtrl.navigateForward('/events');
   }
 
