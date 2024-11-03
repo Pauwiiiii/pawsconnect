@@ -1,6 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { RequestService } from 'src/app/services/request/request.service';
+import { environment } from 'src/environments/environment.prod';
+import { LoadingService } from 'src/app/services/loading/loading.service';
+import { ToastService } from 'src/app/services/toast/toast.service';
+import { StorageService } from 'src/app/services/storage/storage.service';
+
 
 interface LoginResponse {
   message: string;
@@ -26,7 +32,12 @@ export class Login2Page {
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private requestservice: RequestService,
+    private loadingservice: LoadingService, // Define first ins constructor before implement
+    private toasterservice: ToastService,
+    private storageservice: StorageService,
+    private changesdetector: ChangeDetectorRef
   ) {}
 
   // Function to toggle password visibility
@@ -52,29 +63,32 @@ export class Login2Page {
       this.emailError = false;
       return;
     }
-  
-    // Proceed with the login
-    this.authService.login(this.email, this.password).subscribe(
-      (response: LoginResponse) => {
-        if (response.message === "Login successful.") {
-          console.log('Login successful:', response.user);
-          this.authService.setLoginState(true); // Set the login state
-          this.router.navigate(['/home']);
-          this.showHeader = true;
-          this.showBottomBar = true;
-          this.emailError = false;
-          this.passwordError = false;
-        } else {
-          this.passwordError = true; // Set error for incorrect password or email
-          this.emailError = false;
-          console.error('Login failed:', response.message);
-        }
-      },
-      (error: any) => {
-        console.error('Error during login:', error);
-        this.passwordError = true;
-        this.emailError = false;
-      }
-    );
-  }
+
+    /* LOGIN PROCESS */
+    // Show login spinner or dialog. - Showing to user that there's process happen.
+
+    // ionic login spinner tip - https://ionicframework.com/docs/api/loading ( i do recommend must be controlled by controller)
+    
+    this.loadingservice.showLoading("Signing-in"); //  Handle loading from loading service
+
+    let loginUrl = environment.apiRoute + "/login.php";
+    this.requestservice.post(loginUrl, {
+      email: this.email,
+      password: this.password,
+      apikey: environment.apiKey     
+    }).then((result: any) => {
+      this.storageservice.setStorage("name",result.name);
+      this.storageservice.setStorage("email",result.email);
+      this.storageservice.setStorage("userid",result.userid);
+      this.loadingservice.dismiss();
+      this.changesdetector.detectChanges();
+      this.router.navigate(["home"])
+    }).catch((result) => {
+      this.loadingservice.dismiss();
+      this.toasterservice.presentToast("Authentication Failed", 5000, "top");
+      // HANDLE ERROR
+      // SHOW DIALOG TO USER
+    });
+
+}
 }
