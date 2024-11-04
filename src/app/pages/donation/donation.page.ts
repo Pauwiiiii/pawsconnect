@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonationPage implements OnInit {
   selectedSegment: string = 'cash'; // Default to 'cash' segment
+  firstname: string = '';
+  lastname: string = '';
+  phone: string = '';
+  email: string = '';
+  orgname: string = '';
   referenceNumber: string = '';
   wantAcknowledgment: boolean = false;
 

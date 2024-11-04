@@ -6,16 +6,30 @@
 
 <ion-content>
   <div class="messages-container">
-    <div *ngFor="let message of messages" [ngClass]="{'user-message': message.sender === 'user', 'admin-message': message.sender === 'admin'}" class="message-bubble">
-      <p>{{ message.text }}</p>
-      <span class="timestamp">{{ message.timestamp }}</span>
+    <div *ngFor="let message of messages" class="message-container">
+      <img 
+        class="avatar admin-avatar" 
+        *ngIf="message.sender === 'admin'" 
+        [src]="'../../assets/images/avatar.png'" 
+        alt="{{ message.sender }} avatar" 
+      />
+      <div [ngClass]="{'user-message': message.sender === 'user', 'admin-message': message.sender === 'admin'}" class="message-bubble">
+        <p>{{ message.text }}</p>
+        <span class="timestamp">{{ message.timestamp }}</span>
+      </div>
+      <img 
+        class="avatar user-avatar" 
+        *ngIf="message.sender === 'user'" 
+        [src]="'../../assets/images/avatar.png'" 
+        alt="User avatar" 
+      />
     </div>
   </div>
 </ion-content>
 
 <ion-footer>
   <div class="message-input-container">
-    <ion-input placeholder="Type a message..." [(ngModel)]="newMessage"></ion-input>
+    <ion-input placeholder="Enter a message..." [(ngModel)]="newMessage"></ion-input>
     <ion-button (click)="sendMessage()" color="primary">
       <ion-icon name="send"></ion-icon>
     </ion-button>

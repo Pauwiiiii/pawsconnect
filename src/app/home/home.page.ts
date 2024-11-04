@@ -94,4 +94,6 @@ export class HomePage {
   goToAbout() {
     this.navCtrl.navigateForward('/about');
   }
+
+  
 }

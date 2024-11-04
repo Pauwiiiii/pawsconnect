@@ -7,40 +7,106 @@
 <ion-content class="donation-content">
   <ion-segment [(ngModel)]="selectedSegment" color="primary" class="donation-segment">
     <ion-segment-button value="cash">
-      <ion-label>Cash</ion-label>
+      <ion-label class="title">Monetary</ion-label>
     </ion-segment-button>
     <ion-segment-button value="in-kind">
-      <ion-label>In-Kind</ion-label>
+      <ion-label class="title">In-Kind</ion-label>
     </ion-segment-button>
   </ion-segment>
 
   <!-- Cash Donation Section -->
-  <div *ngIf="selectedSegment === 'cash'" class="donation-section">
-    <h2>Scan GCash QR Code</h2>
-    <p>Scan the QR code below to donate via GCash:</p>
-    <img src="assets/images/gcash-qr.png" alt="GCash QR Code" class="qr-code">
-
-    <ion-item>
-      <ion-label position="floating">Reference Number</ion-label>
-      <ion-input [(ngModel)]="referenceNumber" placeholder="Enter Ref. No."></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Acknowledge Donation</ion-label>
-      <ion-toggle [(ngModel)]="wantAcknowledgment"></ion-toggle>
-    </ion-item>
-
-    <ion-button color="secondary" expand="full" (click)="submitCashDonation()">Submit Donation</ion-button>
+  <div *ngIf="selectedSegment === 'cash'">
+    <ion-card>
+      <img src="assets/images/donation1.png" alt="Description of Image" class="responsive-image">
+      <ion-card-content>
+        <p class="donate">A monetary donation allows you to directly support the care and well-being of rescued animals. By donating money, you contribute to the overall operation of the shelter. Please scan the QR code of Gcash above to donate in the shelter.</p>
+        <ion-item>
+          <ion-label position="stacked">Name</ion-label>
+          <ion-input class="label" [(ngModel)]="firstname" placeholder="Enter your full name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Phone number</ion-label>
+          <ion-input class="label" [(ngModel)]="phone" placeholder="Enter your phone number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input class="label" [(ngModel)]="email" placeholder="Enter your email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Organization name (optional)</ion-label>
+          <ion-input class="label" [(ngModel)]="orgname" placeholder="Enter your organization name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Reference number</ion-label>
+          <ion-input class="label" [(ngModel)]="referenceNumber" placeholder="Enter your reference number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Donation amount</ion-label>
+          <ion-input class="label" [(ngModel)]="referenceNumber" placeholder="Enter the amount"></ion-input>
+        </ion-item>
+        <ion-label class="ack" position="stacked">Do you want to be acknowledged?</ion-label>
+          <ion-radio-group [(ngModel)]="wantAcknowledgment">
+            <div class="radio-row">
+              <ion-item lines="none">
+                <ion-label>Yes</ion-label>
+                <ion-radio slot="start" value="yes"></ion-radio>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" value="no"></ion-radio>
+              </ion-item>
+            </div>
+        </ion-radio-group>
+        <ion-button expand="full" (click)="submitCashDonation()"><span>Submit</span></ion-button>
+      </ion-card-content>
+    </ion-card>
   </div>
 
   <!-- In-Kind Donation Section -->
-  <div *ngIf="selectedSegment === 'in-kind'" class="donation-section">
-    <h2>Shelter Needs</h2>
-    <p>We are currently in need of the following items:</p>
-    <ion-list>
-      <ion-item *ngFor="let need of shelterNeeds">
-        <ion-label>{{ need }}</ion-label>
-      </ion-item>
-    </ion-list>
+  <div *ngIf="selectedSegment === 'in-kind'">
+    <ion-card>
+      <img src="assets/images/donation2.png" alt="Description of Image" class="responsive-image">
+      <ion-card-content>
+        <p class="donate">An in-kind donation involves giving goods or services rather than money to the shelter. You can give your donation to the shelter by visiting them directly or by dropping your donation to the specific location.</p>
+        <ion-item>
+          <ion-label position="stacked">Name</ion-label>
+          <ion-input class="label" [(ngModel)]="firstname" placeholder="Enter your full name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Phone number</ion-label>
+          <ion-input class="label" [(ngModel)]="phone" placeholder="Enter your phone number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input class="label" [(ngModel)]="email" placeholder="Enter your email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Organization name</ion-label>
+          <ion-input class="label" [(ngModel)]="orgname" placeholder="Enter your organization name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Items to donate</ion-label>
+          <ion-input class="label" [(ngModel)]="orgname" placeholder="Enter the items"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Description (optional)</ion-label>
+          <ion-input class="label" [(ngModel)]="orgname" placeholder="Enter your organization name"></ion-input>
+        </ion-item>
+        <ion-label class="ack" position="stacked">Do you want to be acknowledged?</ion-label>
+          <ion-radio-group [(ngModel)]="wantAcknowledgment">
+            <div class="radio-row">
+              <ion-item lines="none">
+                <ion-label>Yes</ion-label>
+                <ion-radio slot="start" value="yes"></ion-radio>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" value="no"></ion-radio>
+              </ion-item>
+            </div>
+        </ion-radio-group>
+        <ion-button expand="full" (click)="submitCashDonation()"><span>Submit</span></ion-button>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

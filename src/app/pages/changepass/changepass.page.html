@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>changepass</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="profile-header">
+    <ion-avatar class="profile-avatar">
+      <img src="assets/images/avatar.png" alt="User Avatar" />
+      <ion-icon id="camera-icon" name="camera"></ion-icon>
+    </ion-avatar>
+    <h2>{{ userDetails.firstName }}</h2>
+    <ion-card-subtitle class="profile-subtitle">{{userDetails.email}}</ion-card-subtitle>
+  </div>
+
+  <form>
+    <p class="pchange">Change password</p>
+    <p class="pchange1">Your new password must be different from previous used passwords.</p>
+    <ion-item class="box">
+      <ion-input type="password" placeholder="Old password" required></ion-input>
+    </ion-item>
+  
+    <ion-item class="box">
+      <ion-input type="password" placeholder="New password" required></ion-input>
+    </ion-item>
+  
+    <ion-button class="submit" expand="block" type="submit">
+      Save changes
+    </ion-button>
+  </form>
+</ion-content>

@@ -1,7 +1,6 @@
 
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-accountsettings',
@@ -13,10 +12,7 @@ export class AccountSettingsPage {
   userEmail = 'Karina.ano@example.com';
   isLoggedIn = true;
 
-  constructor(
-    private navCtrl: NavController,
-    private authService: AuthService
-  ) {}
+  constructor(private navCtrl: NavController) {}
 
   navigateToEditProfile() {
     this.navCtrl.navigateForward('/profile');
@@ -30,8 +26,20 @@ export class AccountSettingsPage {
     this.navCtrl.navigateForward('/profile');
   }
 
+  navigateToFaqs() {
+    this.navCtrl.navigateForward('/faq');
+  }
+
+  navigateToTermcons() {
+    this.navCtrl.navigateForward('/termcons');
+  }
+
+  navigateToChangepass() {
+    this.navCtrl.navigateForward('/changepass');
+  }
+
   signOut() {
-    this.authService.logout(); // Call the logout function from AuthService
-    this.navCtrl.navigateRoot('/login'); // Redirect to the login page after signing out
+    this.isLoggedIn = false;
+    this.navCtrl.navigateRoot('/login');
   }
 }

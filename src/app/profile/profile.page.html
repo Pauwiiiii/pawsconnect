@@ -8,99 +8,111 @@
   <div class="profile-header">
     <ion-avatar class="profile-avatar">
       <img src="assets/images/avatar.png" alt="User Avatar" />
+      <ion-icon id="camera-icon" name="camera"></ion-icon>
     </ion-avatar>
-    <h2>{{ userDetails.username }}</h2>
+    <h2>{{ userDetails.firstName }}</h2>
+    <ion-card-subtitle class="profile-subtitle">{{userDetails.email}}</ion-card-subtitle>
   </div>
 
-  <div class="profile-details">
+  <div class="profile-details-container">
     <ion-list lines="none" *ngIf="!isEditing">
       <ion-item>
-        <ion-label position="stacked">First Name</ion-label>
+        <ion-label position="stacked">First name</ion-label>
         <ion-text>{{ userDetails.firstName }}</ion-text>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Last Name</ion-label>
+        <ion-label position="stacked">Last name</ion-label>
         <ion-text>{{ userDetails.lastName }}</ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Organization Name</ion-label>
-        <ion-text>{{ userDetails.organizationName }}</ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Location</ion-label>
-        <ion-text>{{ userDetails.location }}</ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Email Address</ion-label>
-        <ion-text>{{ userDetails.email }}</ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Phone Number</ion-label>
-        <ion-text>{{ userDetails.phoneNumber }}</ion-text>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Birthday</ion-label>
         <ion-text>{{ userDetails.birthday }}</ion-text>
       </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Age</ion-label>
+        <ion-text>{{ userDetails.age }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Region</ion-label>
+        <ion-text>{{ userDetails.region }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Province</ion-label>
+        <ion-text>{{ userDetails.province }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">City</ion-label>
+        <ion-text>{{ userDetails.city }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Barangay</ion-label>
+        <ion-text>{{ userDetails.barangay }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Street (optional)</ion-label>
+        <ion-text>{{ userDetails.street }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Phone number</ion-label>
+        <ion-text>{{ userDetails.phoneNumber }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-text>{{ userDetails.email }}</ion-text>
+      </ion-item>
     </ion-list>
+
 
     <ion-list *ngIf="isEditing" lines="none">
       <ion-item>
-        <ion-label position="stacked">Username</ion-label>
-        <ion-input [(ngModel)]="userDetails.username" placeholder="Enter username"></ion-input>
-      </ion-item>
-      <ion-item>
         <ion-label position="stacked">First Name</ion-label>
-        <ion-input [(ngModel)]="userDetails.firstName" placeholder="Enter first name"></ion-input>
+        <ion-input [(ngModel)]="userDetails.firstName" placeholder="Enter your first name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Last Name</ion-label>
-        <ion-input [(ngModel)]="userDetails.lastName" placeholder="Enter last name"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Organization Name</ion-label>
-        <ion-input [(ngModel)]="userDetails.organizationName" placeholder="Enter organization"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Location</ion-label>
-        <ion-input [(ngModel)]="userDetails.location" placeholder="Enter location"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Email Address</ion-label>
-        <ion-input [(ngModel)]="userDetails.email" placeholder="Enter email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Phone Number</ion-label>
-        <ion-input [(ngModel)]="userDetails.phoneNumber" placeholder="Enter phone number"></ion-input>
+        <ion-input [(ngModel)]="userDetails.lastName" placeholder="Enter your last name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Birthday</ion-label>
-        <ion-input [(ngModel)]="userDetails.birthday" placeholder="Enter birthday"></ion-input>
+        <ion-input [(ngModel)]="userDetails.birthday" placeholder="Enter your birthday"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Age</ion-label>
+        <ion-input [(ngModel)]="userDetails.age" placeholder="Enter your age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Region</ion-label>
+        <ion-input [(ngModel)]="userDetails.region" placeholder="Enter your region"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Province</ion-label>
+        <ion-input [(ngModel)]="userDetails.province" placeholder="Enter your province"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">City</ion-label>
+        <ion-input [(ngModel)]="userDetails.city" placeholder="Enter your city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Barangay</ion-label>
+        <ion-input [(ngModel)]="userDetails.barangay" placeholder="Enter your barangay"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Street (Optional)</ion-label>
+        <ion-input [(ngModel)]="userDetails.street" placeholder="Enter your street"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Phone number</ion-label>
+        <ion-input [(ngModel)]="userDetails.phoneNumber" placeholder="Enter your phone number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input [(ngModel)]="userDetails.email" placeholder="Enter your email"></ion-input>
       </ion-item>
     </ion-list>
-
-    <div class="profile-actions">
-      <ion-button expand="block" (click)="toggleEdit()">
-        {{ isEditing ? 'Save Changes' : 'Edit Profile' }}
-      </ion-button>
-    </div>
-
-    <!-- Change Password Section -->
-    <div class="change-password-section">
-      <h3>Change Password</h3>
-      <ion-item>
-        <ion-label position="stacked">Current Password</ion-label>
-        <ion-input type="password" [(ngModel)]="changePasswordForm.currentPassword" placeholder="Enter current password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">New Password</ion-label>
-        <ion-input type="password" [(ngModel)]="changePasswordForm.newPassword" placeholder="Enter new password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Confirm New Password</ion-label>
-        <ion-input type="password" [(ngModel)]="changePasswordForm.confirmPassword" placeholder="Confirm new password"></ion-input>
-      </ion-item>
-      <ion-button expand="full" (click)="changePassword()" color="secondary">Change Password</ion-button>
-    </div>
+  </div>
+  <div class="profile-actions">
+    <ion-button (click)="toggleEdit()">
+        <span>{{ isEditing ? 'Save edit' : 'Edit profile' }}</span>
+    </ion-button>
   </div>
 </ion-content>

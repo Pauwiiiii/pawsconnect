@@ -1,0 +1,166 @@
+.color {
+    background-color: #652E89;
+  }
+  
+  #header {
+    height: 100%;
+    background-color: transparent;
+  }
+  
+  
+  #logo h2 {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    font-size: 22px;
+    color: black;
+    margin-bottom: 10px;
+    margin-top: 40px;
+  }
+
+  #logo p {
+    text-align: center;
+    margin: 10px;
+    font-size: 15px;
+    margin-top: 5px;
+    color: black;
+    margin-bottom: 30px;
+    line-height: 20px;
+  }
+
+  ion-button {
+    height: 50px;
+    --box-shadow: none;
+    text-transform: initial;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin: 9px;
+    width: auto;
+    margin-top: 20px !important;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.submit {
+    --background: #e29824;
+    color: #ffffff; 
+    border-radius: 10px; 
+    font-weight: 600;
+    border: 2px solid #e29824;
+}
+
+.submit:hover {
+    --background:  #652E89;
+    color:  #ffffff; 
+    border-radius: 10px; 
+    font-weight: 600;
+    border: 2px solid #652E89;
+  }
+
+  .question{
+    margin-right: 30px;
+    margin-left: 30px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+
+  .card-link1 {
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 20px; 
+    background-color: #652E89;
+    height: 100px;
+    gap: 2px !important;
+  }
+  
+
+  .card-link1:hover {
+    transform: scale(1.05);
+    border: 3px solid #e29824;
+  }
+
+  .card-link2 {
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 20px; 
+    background-color: #652E89; 
+    height: 100px;
+    gap: 2px !important;
+  }
+  
+
+  .card-link2:hover {
+    transform: scale(1.05);
+    border: 3px solid #e29824;
+  }
+
+  .card-link3 {
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 20px; 
+    background-color: #652E89; 
+    height: 100px;
+    gap: 2px !important;
+  }
+  
+
+  .card-link3:hover {
+    transform: scale(1.05);
+    border: 3px solid #e29824;
+  }
+
+
+  .card-title {
+    color: white;
+    font-weight: 650;
+    font-size: 16px;
+  }
+
+  .centered-row {
+    justify-content: center; 
+    --ion-grid-column-padding: 10px; 
+  }
+  
+  .custom-col {
+    padding: 0; 
+  }
+  
+  .custom-card {
+    margin-top: 15px;
+    margin: 10px; 
+    text-align: center; 
+  }
+  
+
+  ion-radio-group {
+    display: flex;           
+    flex-direction: column; 
+    margin: 0 30px;        
+  }
+
+  ion-radio-group ion-label {
+    font-size: 16px; 
+    padding-left: 5px; 
+    font-family: Gilroy;
+  }
+
+  ion-item {
+    --ion-item-background: transparent; 
+    --ion-item-border-color: transparent; 
+    border: none; 
+    margin-bottom: 0 !important; 
+    padding: 0; 
+  }
+
+  .card-image {
+    width: 50px; 
+    height: 50px; 
+    display: block; 
+    margin: 0 auto; 
+  }
+  

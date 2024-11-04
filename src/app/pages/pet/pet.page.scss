@@ -2,7 +2,7 @@ ion-header {
     ion-toolbar {
       --color: white;
       ion-title {
-        font-size: 1.6rem;
+        font-size: 16px;
         font-weight: bold;
       }
     }
@@ -12,22 +12,22 @@ ion-header {
     text-align: center;
     padding: 10px 0;
     margin-top: 5px;
-    font-size: 0.9rem; 
+    font-size: 16px !important; 
     color: #666; 
+    text-decoration: italic !important;
   }
   
   .article-container {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    padding: 1rem 0;
   }
   
   .resource-card {
     display: flex;
     align-items: center;
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     transition: transform 0.3s ease;
@@ -49,21 +49,23 @@ ion-header {
       flex: 1;
   
       .resource-title {
-        font-size: 1.2rem;
+        font-size: 18px !important;
         font-weight: 600;
         color: #333;
+        margin: 0.3rem;
       }
   
       .resource-description {
-        font-size: 0.9rem;
+        font-size: 14px;
+        text-align: justify;
         color: #777;
-        margin-top: 0.3rem;
+        margin: 0.3rem;
       }
     }
   
     .chevron-icon {
       font-size: 1.5rem;
-      color:#fdb849;
+      color:#e29824;
     }
   }
   
@@ -72,5 +74,118 @@ ion-header {
     ion-padding {
       padding: 1rem;
     }
+  }
+  
+
+  .top-section {
+    min-height: 160px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #652e89;
+    padding-bottom: 40px; /* Reduce bottom padding if needed */
+    margin-bottom: 10px;
+  
+    .title {
+      display: flex;
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align content to the left */
+      color: white;
+      padding-left: 15px;
+    }
+    
+    .title h2 {
+      font-weight: 700;
+      font-size: 34px;
+      line-height: 1.2; /* Adjusts spacing between lines within <h2> */
+      margin-bottom: 0; /* Adds space between <h2> and <p> */
+      padding-top: 40px; /* Adjust this value if spacing is too large */
+      letter-spacing: 0.01rem;
+    }
+    
+    .title-top {
+      font-weight: 200;
+      font-size: 13px;
+      padding-top: 15px !important; /* Removes default margin */
+      font-style: italic;
+    }
+  
+    .title-bottom {
+      font-weight: 200;
+      font-size: 13px;
+      margin-top: 0; /* Removes default margin */
+      font-style: italic;
+      line-height: 10px;
+      padding-bottom: 15px !important; /* Removes default margin */
+    }
+  
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+      color: #ffffff;
+    }
+  
+    .adopt, .watch {
+      width: 50%;
+      --border-radius: 25px;
+      --padding-bottom: 15px;
+      --padding-end: 5px;
+      --padding-top: 15px;
+      --padding-start: 5px;
+      --margin-start: 10px;
+      --margin-end: 10px;
+  
+    }
+  
+    ion-icon {
+      margin-right: 13px;
+      font-size: 29px;
+    }
+  
+    .adopt {
+      --background: #e29824; /* Set the background color */
+      border: 2px solid#652e89;
+      color: #652e89; /* Set the text color */
+      text-transform: lowercase; /* Capitalize the first letter of each word */
+      font-size: 16px;
+      font-weight: 900;
+    }
+  
+    .adopt:hover {
+      --background: #652e89; /* Set the background color */
+      border: 2px solid#652e89;
+      color: white; /* Set the text color */
+      text-transform: lowercase; /* Capitalize the first letter of each word */
+      font-size: 16px;
+      font-weight: 900;
+    }
+  
+    ion-button.adopt span::first-letter {
+      text-transform: uppercase; /* Capitalize only the first letter */
+    }
+  
+    .watch {
+      --background: transparent; /* Set the background color */
+      --border-width: 3px;
+    --border-style: solid;
+    --border-color: #e29824;
+      color: white; /* Set the text color */
+      text-transform: capitalize; /* Capitalize the first letter of each word */
+      font-size: 14px;
+      font-weight: 900;
+    }
+  
+    .watch:hover {
+      --background: #e29824; /* Set the background color */
+      --border-width: 3px;
+    --border-style: solid;
+    --border-color: #e29824;
+      color: #652e89; /* Set the text color */
+      text-transform: capitalize; /* Capitalize the first letter of each word */
+      font-size: 14px;
+      font-weight: 900;
+    }
+    
   }
   

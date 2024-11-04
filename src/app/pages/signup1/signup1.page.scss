@@ -1,163 +1,163 @@
 
 * {
-    margin-right: 5px;
-    margin-left: 5px;
-    padding: 0;
-  }
-  
-  h1 {
-    margin-top: 15%;
-    margin-bottom: 10px;
-    font-size: 32px;
-    font-weight: 700;
-  }
-  
-  h3 {
-    color: #939fab;
-    font-weight: 500;
-    font-size: large;
-    margin-bottom: 50px;
-  }
-  
-  form {
-    margin-top: 25px;
-  
-    app-button {
-      display: block;
-      margin-top: 3rem;
-    }
-  }
-  
-  .footer-text {
-    text-align: center;
-    font-size: 16px;
-    margin-top: 5%;
-  
-    a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #e29824;
-    }
-  }
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 0;
+}
 
-  .box {
-    --border-style: none; /* Remove the border style */
-    --background: transparent; /* Make the background transparent */
-    border: 2px solid #ced4da; /* Add border to box */
-    border-radius: 12px; /* Rounded corners for input boxes */
-    margin-top: 15px; /* Adjust top margin */
-    margin-bottom: 15px; /* Adjust bottom margin */
-    padding: 0; /* Remove internal padding from the box */
+h1 {
+  margin-top: 15%;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h3 {
+  color: #939fab;
+  font-weight: 500;
+  font-size: large;
+  margin-bottom: 50px;
+}
+
+form {
+  margin-top: 25px;
+
+  app-button {
+    display: block;
+    margin-top: 3rem;
+  }
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 5%;
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #e29824;
+  }
+}
+
+.box {
+  --border-style: none; 
+  --background: transparent; 
+  border: 2px solid #ced4da; 
+  border-radius: 12px; 
+  margin-top: 15px;
+  margin-bottom: 15px; 
+  padding: 0; 
 }
 
 
 .box:hover {
-    --border-style: none; /* Remove the border style */
-    --background: transparent; /* Make the background transparent */
-    border: 2px solid #652E89; /* Add border to box */
-    border-radius: 12px; /* Rounded corners for input boxes */
-    margin-top: 15px; /* Adjust top margin */
-    margin-bottom: 15px; /* Adjust bottom margin */
-    padding: 0; /* Remove internal padding from the box */
+  --border-style: none; 
+  --background: transparent; 
+  border: 2px solid #e29824; 
+  border-radius: 12px; 
+  margin-top: 15px; 
+  margin-bottom: 15px;
+  padding: 0; 
 }
 ion-input {
-    --padding-right: 5px; /* Right padding */
-    --padding-left: 5px; /* Left padding */
-    --padding-top: 0; /* Remove top padding */
-    --padding-bottom: 0; /* Remove bottom padding */
-    height: 30px; /* Fixed height for input boxes */
-    border: none; /* Remove any default border */
-    box-shadow: none; /* Remove shadow */
+  --padding-right: 5px; 
+  --padding-left: 5px; 
+  --padding-top: 0; 
+  --padding-bottom: 0; 
+  height: 30px; 
+  border: none; 
+  box-shadow: none; 
 }
 
 ion-input::placeholder {
-    color: #6c757d; /* Placeholder color */
-    opacity: 1; /* Ensure full opacity for placeholder text */
+  color: #6c757d; 
+  opacity: 1; 
 }
 
 ion-button {
-    height: 50px;
-    --box-shadow: none;
-    text-transform: initial;
-    font-size: 16px;
-    letter-spacing: 0;
-    font-weight: 400;
-    
+  height: 50px;
+  --box-shadow: none;
+  text-transform: initial;
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 400;
+  width: auto;
 }
 
 .submit {
-    --background: #e29824;
-    color: #ffffff; /* Text color */
-    border-radius: 10px; /* Optional: adds rounded corners */
-    font-weight: 600;
-    border: 2px solid #e29824;
-    margin-top: 20px;
+  --background: #e29824;
+  color: #ffffff; 
+  border-radius: 10px; 
+  font-weight: 600;
+  border: 2px solid #e29824;
+  margin-top: 15px;
 }
 
 .submit:hover {
-    --background:  #652E89;
-    color:  #ffffff; /* Text color */
-    border-radius: 10px; /* Optional: adds rounded corners */
-    font-weight: 600;
-    border: 2px solid #652E89;
-  }
-  
+  --background:  #652E89;
+  color:  #ffffff; 
+  border-radius: 10px; 
+  font-weight: 600;
+  border: 2px solid #652E89;
+}
+
 .google {
-    --background: transparent; /* Button background color */
-    --color:  #333;      /* Text color */
-    font-weight: 300;
-    font-size: 14px;
-    border: 2px solid #ced4da; /* Add a border with the same color as the text */
-    border-radius: 10px;
+  --background: transparent; 
+  --color:  #333;     
+  font-weight: 300;
+  font-size: 14px;
+  border: 2px solid #ced4da; 
+  border-radius: 10px;
+}
+
+
+.line-text {
+  padding: 2px;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  position: relative;
+  height: 20px;
+
+  .lines {
+    height: 1px;
+    background-color: #858585;
+    display: block;
   }
 
-
-  .line-text {
-    padding: 2px;
-    margin-top: 40px;
-    margin-bottom: 12px;
-    position: relative;
-    height: 20px;
-
-    .lines {
-      height: 1px;
-      background-color: #858585;
-      display: block;
-    }
-
-    .text {
-      position: absolute;
-      top: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #fff;
-      padding: 0 15px;
-      font-size: 13px;
-      font-weight: 500;
-      color: #5e5e5e;
-    }
+  .text {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 0 15px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #5e5e5e;
   }
+}
 
-  .forgotpass {
-    text-align: right;
-    font-size: 16px;
-    margin-bottom: 8%;
-  
-    a {
-      text-decoration: none;
-      font-weight: 500;
-      color: #e29824;
-    }
+.forgotpass {
+  text-align: right;
+  font-size: 16px;
+  margin-bottom: 8%;
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #e29824;
   }
+}
 
-  .input-row {
-    display: flex;
-    gap: 5px; /* Space between items */
-    margin-right: 5px;
-    margin-left: 5px;
-    --margin-bottom: 0 !important;
+.input-row {
+  display: flex;
+  gap: 5px; 
+  margin-right: 5px;
+  margin-left: 5px;
+  --margin-bottom: 0 !important;
 }
 
 .input-row .box {
-    flex: 1; /* Make both boxes take up equal space */
+  flex: 1; 
 }

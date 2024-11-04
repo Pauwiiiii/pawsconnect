@@ -1,97 +1,218 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f0f4f8; 
-    padding: 20px;
-    border-radius: 20px;
+.color {
+  background-color: #fff;
+}
+
+#header {
+  height: 50%;
+  background-color: #7BBEBC;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  border-radius: 0 0 30px 30px;
+  align-items: center; /* Centers children horizontally */
+  position: relative; /* Ensures positioning within the header */
+}
+
+#app-bar {
+  width: 100%;
+  height: 60px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0; /* Keeps the app bar at the top */
+}
+
+#app-bar ion-icon {
+  font-size: 24px;
+}
+
+#logo {
+  flex-grow: 1; /* Pushes #logo to the center of remaining space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 450px;
+  flex-direction: column; /* Stacks img, h2, and p vertically */
+}
+
+#logo img {
+  width: 70%;
+}
+
+
+#logo h2 {
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  font-size: 24px;
+  margin-top: 8px;
+}
+
+ion-card {
+  position: absolute;
+  top: 41%;
+  left: 0;
+  right: 0;
+  width: 100vw; /* Ensures full viewport width */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 35px 35px 0 0;
+  margin-left: calc((100vw - 100%) / 2); /* Centers in case of viewport shifts */
+}
+
+ion-content {
+  padding: 0;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center; 
+  gap: 10px; 
   }
   
-  img {
-    width: auto; 
-    height: auto; 
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Soft shadow effect
+  .profile-actions ion-button {
+  width: 100px; 
+  height: 50px; 
+  --border-radius: 20px; 
+  font-size: 14px; 
+  font-weight: bolder;
+  text-transform: capitalize; 
+  color: #652e89; 
+  --background: #e29824; 
+  --color: white; 
+  margin-top: 15px;
+}
+
+
+.profile-actions ion-button:hover {
+  --background: #652e89; 
+  transform: scale(1.05); 
+  color: white;
+  font-weight: 700 !important; 
+}
+  ion-icon {
+  font-size: 23px;
+  padding-left: 3px;
   }
-  
-  .pet-details {
-    background-color: white; 
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    width: auto; 
-    max-width: auto; 
-    text-align: center; 
+
+
+  .my-header {
+    text-align: left !important;
+    color: black;
+    font-size: 26px;
+    margin-bottom: 3px !important;
+    font-weight: 900;
   }
-  
-  h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  h2 {
+
+  .my-meds {
+    text-align: left !important;
+    color: black;
     font-size: 18px;
-    color: #555; 
+    margin-top: 10px !important;
+    margin-bottom: 3px !important;
+    font-weight: 900;
+  }
+
+  .title-meds {
+    text-align: left;
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  .meds {
+    font-size: 15px;
+    padding: 5px;
+  }
+  .story {
+    text-align: left !important;
+    font-size: 16px;
+    margin-bottom: 5px !important;
+    text-align: justify !important;
   }
   
-  .pet-story {
-    margin: 15px 0;
-    font-size: 14px;
-    color: #777; 
+  
+  .category {
+    width: 80px; 
+    height: 45px; 
+    --border-radius: 20px; 
+    font-size: 14px; 
+    font-weight: bolder;
+    text-transform: capitalize; 
+    color: #652e89; 
+    --background: #d3b2eb; 
+    --color: white; 
+    margin-top: 5px;
+    justify-content: center; 
+    gap: 10px;
   }
   
-  .medical-history {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 15px;
+  .classification {
+    width: 80px; 
+    height: 45px; 
+    --border-radius: 20px; 
+    font-size: 14px; 
+    font-weight: bolder;
+    text-transform: capitalize; 
+    color: #e87a8d; 
+    --background: #f8bec8; 
+    --color: white; 
+    margin-top: 5px;
+    justify-content: center; 
+    gap: 10px;
   }
   
-  .medical-history div {
-    display: flex;
-    align-items: center;
-    background-color: #f8f9fa; 
-    border-radius: 10px;
-    padding: 10px;
-    margin: 5px;
-    width: 45%; // Adjust width to fit in two columns
+  
+  .gender {
+    width: 80px; 
+    height: 45px; 
+    --border-radius: 20px; 
+    font-size: 14px; 
+    font-weight: bolder;
+    text-transform: capitalize; 
+    color: #4d8cdf; 
+    --background: #90b8ed; 
+    --color: white; 
+    margin-top: 5px;
+    justify-content: center; 
+    gap: 10px;
   }
   
-  .medical-history .icon {
-    margin-right: 8px; 
-    color: #007bff; 
+  .size {
+    width: 80px; 
+    height: 45px; 
+    --border-radius: 20px; 
+    font-size: 14px; 
+    font-weight: bolder;
+    text-transform: capitalize; 
+    color: #e29824; 
+    --background: #f6dc99; 
+    --color: white; 
+    margin-top: 5px;
+    justify-content: center; 
+    gap: 10px;
+  }
+
+  .breed {
+    width: 100px; 
+    height: 45px; 
+    --border-radius: 20px; 
+    font-size: 14px; 
+    font-weight: bolder;
+    text-transform: capitalize; 
+    color: #4e9629; 
+    --background: #b6dda2; 
+    --color: white; 
+    margin-top: 5px;
+    justify-content: center; 
+    gap: 10px;
   }
   
-  .personality-traits {
-    margin-top: 20px;
-    width: 100%;
+  .profile-actions ion-button.category:hover {
+    --background: #652e89; 
+    transform: scale(1.05); 
+    color: white;
+    font-weight: 700 !important; 
   }
-  
-  .personality-traits h3 {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .trait {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0;
-  }
-  
-  .trait-name {
-    font-size: 14px;
-  }
-  
-  .trait-value {
-    width: 70%; // for the visual representation
-  }
-  
-  .trait-value {
-    background-color: #ffc107; 
-    border-radius: 10px;
-    height: 5px; 
-  }
-  
+    

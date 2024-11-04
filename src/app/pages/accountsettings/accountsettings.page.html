@@ -4,43 +4,58 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="profile-content">
+  <div class="profile-header">
+    <ion-avatar class="profile-avatar">
+      <img src="assets/images/avatar.png" alt="User Avatar" />
+      <ion-icon id="camera-icon" name="camera"></ion-icon>
+    </ion-avatar>
+    <h2>{{ userName }}</h2>
+    <ion-card-subtitle class="profile-subtitle">{{userEmail}}</ion-card-subtitle>
+  </div>
+  
+  <p class="psettings">Account settings</p>
+  <div class="psettings1">
+    <ion-button (click)="navigateToEditProfile()" class="edit-profile-btn">
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+        <span>Edit profile</span>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
 
-  <ion-card class="user-account-card">
-    <!-- User Profile Information -->
-    <ion-card-header class="center-content">
-      <ion-avatar class="profile-avatar">
-        <img src="assets/images/avatar.png" alt="User Avatar" />
-      </ion-avatar>
-      <ion-card-title class="profile-title">{{ userName }}</ion-card-title>
-      <ion-card-subtitle class="profile-subtitle">{{ userEmail }}</ion-card-subtitle>
-    </ion-card-header>
+  <div class="psettings1">
+    <ion-button (click)="navigateToChangepass()" class="edit-profile-btn">
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        <span>Change password</span>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
 
-    <!-- Divider Line -->
-    <div class="divider"></div>
+  <div class="psettings1">
+    <ion-button (click)="signOut()" *ngIf="isLoggedIn" class="edit-profile-btn">
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        <span>Sign out</span>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
 
-    <!-- Account Options -->
-    <ion-list class="settings-list">
-      <ion-item button class="settings-item" (click)="navigateToEditProfile()">
-        <ion-icon slot="start" name="person-outline"></ion-icon>
-        <ion-label>Edit Profile</ion-label>
-      </ion-item>
+    </ion-button>
+  </div>
 
-      <ion-item button class="settings-item" (click)="navigateToChangePassword()">
-        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
-        <ion-label>Change Password</ion-label>
-      </ion-item>
+  <p class="psettings">Help & support</p>
 
-      <ion-item button class="settings-item" (click)="signOut()" *ngIf="isLoggedIn">
-        <ion-icon slot="start" name="log-out-outline"></ion-icon>
-        <ion-label>Sign Out</ion-label>
-      </ion-item>
+  <div class="psettings1">
+    <ion-button (click)="navigateToFaqs()" class="edit-profile-btn">
+      <ion-icon slot="start" name="help-circle-outline"></ion-icon>
+        <span>FAQs</span>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
 
-      <ion-item button class="settings-item" (click)="navigateToLogin()" *ngIf="!isLoggedIn">
-        <ion-icon slot="start" name="log-in-outline"></ion-icon>
-        <ion-label>Login</ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-card>
-
+  <div class="psettings1">
+    <ion-button (click)="navigateToTermcons()" class="edit-profile-btn">
+      <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+        <span>Terms of Use &
+          Privacy Policy</span>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
 </ion-content>

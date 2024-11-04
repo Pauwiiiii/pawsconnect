@@ -15,6 +15,7 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
   public headerTitle: string = ''; // Dynamic na header title
   unreadNotificationsCount: number = 0; // Counter para sa unread notifications
   @ViewChild(IonTabs) tabRef!: IonTabs;
+
   public homeTabClass: string = '';
   showHeader: boolean = true; // Control para sa visibility ng header
   showBottomBar: boolean = true; // Control para sa visibility ng bottom bar
@@ -92,19 +93,23 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
 
   // Dynamic na pag-update ng header title at bottom bar visibility
   updateHeaderTitle(url: string) {
-    // I-hide ang header at bottom bar sa specific na pages
-    if (url.includes('login') || url.includes('signup') || url.includes('register') || url.includes('forgot-password')) {
+
+    if (url.includes('pet-info')) {
       this.showHeader = false;
-      this.showBottomBar = false; // Itago ang bottom bar
-      this.showHeader = false;
-      this.headerTitle = ''; // Clear ang title
+      this.showBottomBar = true;
       return;
     } else {
-      this.showHeader = true;
-      this.showBottomBar = true; // Ipakita ang bottom bar sa ibang pages
+      this.showBottomBar = true; 
     }
-
-    // Mag-set ng header title depende sa page
+    if (url.includes('login') || url.includes('signup') || url.includes('signup1') || url.includes('signup2') || url.includes('termcons1') || url.includes('onboarding') ||  url.includes('register') || url.includes('forgotpass') || url.includes('petquesintro')|| url.includes('petques') || url.includes('pet-info')) {
+      this.showHeader = false;
+      this.showBottomBar = false; 
+      this.showHeader = false;
+      this.headerTitle = ''; 
+      return;
+    } else {
+      this.showBottomBar = true; 
+    }
     if (url.includes('homes')) {
       this.headerTitle = 'PawsConnect';
     } else if (url.includes('adopt')) {
@@ -131,8 +136,12 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
       this.headerTitle = 'Pet Information';
     } else if (url.includes('accountsettings')) {
       this.headerTitle = 'Account Settings';
+    } else if (url.includes('changepass')) {
+      this.headerTitle = 'Change Password';
+    }else if (url.includes('termcons')) {
+      this.headerTitle = 'Terms & Conditions';
     } else {
-      this.headerTitle = ''; // Default title kung walang match
+      this.headerTitle = ''; 
     }
   }
 
@@ -153,21 +162,14 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
 
   signOut() {
     this.loadingservice.showLoading("Signing Out");
-    
-    // Clear storage
     this.storageservice.clearStorage();
-    
-    // Reset profile information
-    this.profile.name = "";
-    this.profile.email = "";
-  
-    // Detect changes to update the UI
-    this.changesres.detectChanges();
-  
     setTimeout(() => {
       this.loadingservice.dismiss();
+      this.changesres.detectChanges();
       this.navCtrl.navigateRoot('/home'); 
     }, 3000);
-  }  // this.authService.logout(); // Call the logout function from AuthService
-  // Redirect to the login page after signing out
-}
+
+    // this.authService.logout(); // Call the logout function from AuthService
+    // Redirect to the login page after signing out
+  }
+} 

@@ -9,20 +9,17 @@ export class ProfilePage implements OnInit {
   isEditing: boolean = false;
 
   userDetails = {
-    username: 'itsmedapny',
-    firstName: 'Valerie',
+    firstName: 'itsmedapny',
     lastName: 'Luna',
-    organizationName: 'Start Bootstrap',
-    location: 'San Francisco, CA',
-    email: 'name@example.com',
-    phoneNumber: '555-123-4567',
     birthday: '1990-01-01',
-  };
-
-  changePasswordForm = {
-    currentPassword: '',
-    newPassword: '',
-    confirmPassword: '',
+    age: '24 years old',
+    region: 'MIMAROPA Region IV-B',
+    province: 'Palawan',
+    city: 'Puerto Princesa',
+    barangay: 'Sicsican',
+    street: 'Street Maganda',
+    phoneNumber: '555-123-4567',
+    email: 'name@example.com',
   };
 
   constructor() {}
@@ -37,22 +34,14 @@ export class ProfilePage implements OnInit {
     this.isEditing = !this.isEditing;
   }
 
-  changePassword() {
-    if (this.changePasswordForm.newPassword === this.changePasswordForm.confirmPassword) {
-      // Call your password change logic here
-      console.log('Password changed successfully:', this.changePasswordForm);
-      // Reset the form
-      this.changePasswordForm.currentPassword = '';
-      this.changePasswordForm.newPassword = '';
-      this.changePasswordForm.confirmPassword = '';
-    } else {
-      console.error('New passwords do not match');
-      // Handle password mismatch error
-    }
-  }
-
   onSignOut() {
     // Implement sign-out logic here
     console.log('User signed out');
+  }
+
+  uploadImage() {
+    // Logic to upload the image
+    // You might use a file input element or a file picker here
+    console.log('Upload image logic here');
   }
 }

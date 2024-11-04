@@ -94,6 +94,43 @@ const routes: Routes = [
     path: 'signup2',
     loadChildren: () => import('./pages/signup2/signup2.module').then(m => m.Signup2PageModule)
   },
+  
+  {
+    path: 'forgotpass',
+    loadChildren: () => import('./pages/forgotpass/forgotpass.module').then( m => m.ForgotpassPageModule)
+  },
+
+  {
+    path: 'forgotpass2',
+    loadChildren: () => import('./pages/forgotpass2/forgotpass2.module').then( m => m.Forgotpass2PageModule)
+  },
+
+  {
+    path: 'termcons',
+    loadChildren: () => import('./pages/termcons/termcons.module').then( m => m.TermconsPageModule)
+  },
+
+  {
+    path: 'onboarding',
+    loadChildren: () => import('./pages/onboarding/onboarding.module').then( m => m.OnboardingPageModule)
+  },
+
+  {
+    path: 'petquesintro',
+    loadChildren: () => import('./pages/petquesintro/petquesintro.module').then( m => m.PetquesintroPageModule)
+  },
+  {
+    path: 'petques',
+    loadChildren: () => import('./pages/petques/petques.module').then( m => m.PetquesPageModule)
+  },
+  {
+    path: 'termcons1',
+    loadChildren: () => import('./pages/termcons1/termcons1.module').then( m => m.Termcons1PageModule)
+  },
+  {
+    path: 'changepass',
+    loadChildren: () => import('./pages/changepass/changepass.module').then( m => m.ChangepassPageModule)
+  },
 ];
 
 @NgModule({

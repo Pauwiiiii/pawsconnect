@@ -8,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class PetInfoPage implements OnInit {
   pet: { 
     name: string; 
-    age: number; 
+    classification: string; 
+    category: string;
     gender: string; 
     size: string; 
+    breed: string;
+    birthdate: string;
     story: string; 
     image: string; 
     personalityTraits: Array<{ name: string; value: number }>; 
@@ -22,11 +25,14 @@ export class PetInfoPage implements OnInit {
     // Initializing pet data
     this.pet = {
       name: 'Motty',
-      age: 8,
+      category: 'Dog',
+      classification: 'Senior',
+      breed: 'Shih-tzu',
+      birthdate: '06/12/2000',
       gender: 'Male',
       size: 'Medium',
-      story: "Motty's life was a constant struggle for survival as he navigated the harsh streets.",
-      image: 'assets/images/tommy.png', // Ensure this path is correct
+      story: "Motty's life was a constant struggle for survival as he go the harsh streets. He is a cute so much puppy that loves to roamed around.",
+      image: 'assets/images/dog1.png', // Ensure this path is correct
       personalityTraits: [
         { name: 'Playful', value: 0.9 },
         { name: 'Sociable', value: 0.8 },

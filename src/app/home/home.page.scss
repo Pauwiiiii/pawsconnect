@@ -3,10 +3,10 @@
   cursor: pointer;
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s; 
-  border-radius: 20px; /* Rounded corners for cards */
-  background-color: #ffffff; /* Card background */
-  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1), /* Top shadow */
-            0px 3px 5px rgba(0, 0, 0, 0.1);  /* Bottom shadow */
+  border-radius: 20px; 
+  background-color: #ffffff; 
+  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1), 
+            0px 3px 5px rgba(0, 0, 0, 0.1);  
 }
 
 
@@ -15,21 +15,21 @@
   margin-top: 20px;
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s; 
-  border-radius: 20px; /* Rounded corners for cards */
-  background-color: #ffffff; /* Card background */
-  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1), /* Top shadow */
-            0px 3px 5px rgba(0, 0, 0, 0.1);  /* Bottom shadow */
+  border-radius: 20px; 
+  background-color: #ffffff; 
+  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1),
+            0px 3px 5px rgba(0, 0, 0, 0.1);  
 }
 
 .card-links:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
   border: 3px solid #e29824;
 }
 
 .card-link:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   border: 3px solid #e29824;
 }
 
@@ -59,7 +59,6 @@
   font-weight: 600;
 }
 
-/* Centered text styles */
 .centered-text {
   text-align: center;
 }
@@ -69,23 +68,26 @@
   font-weight: 650;
   color: #333;
   margin-top: 20px; 
+  margin-bottom: 7px;
 }
 
 .centered-text p {
   font-size: 16px; 
   color: #666;
+  margin-top: 0 !important;
+  line-height: 20px;
 }
 
-/* Button spacing */
+
 ion-button {
   margin-left: 10px;
 }
 
-/* Pet List Styles */
+
 .pet-card {
   transition: transform 0.2s, box-shadow 0.2s; 
   border-radius: 20px; 
-  overflow: hidden; /* Ensures images fit */
+  overflow: hidden; 
 }
 
 .pet-card:hover {
@@ -99,9 +101,9 @@ ion-button {
   object-fit: cover; 
 }
 
-/* Card header styles */
+
 ion-card-header {
-  text-align: center; /* Center titles and subtitles */
+  text-align: center;
 }
 
 ion-card-title {
@@ -121,12 +123,12 @@ ion-card-subtitle {
   border-bottom-left-radius: 35px;
   border-bottom-right-radius: 35px;
   background-color: #652e89;
-  padding-bottom: 40px; /* Reduce bottom padding if needed */
+  padding-bottom: 40px; 
 
   .title {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: flex-start; /* Align content to the left */
+    flex-direction: column; 
+    align-items: flex-start;
     color: white;
     padding-left: 15px;
   }
@@ -134,26 +136,26 @@ ion-card-subtitle {
   .title h2 {
     font-weight: 700;
     font-size: 34px;
-    line-height: 1.2; /* Adjusts spacing between lines within <h2> */
-    margin-bottom: 0; /* Adds space between <h2> and <p> */
-    padding-top: 40px; /* Adjust this value if spacing is too large */
+    line-height: 1.2;
+    margin-bottom: 0; 
+    padding-top: 40px; 
     letter-spacing: 0.01rem;
   }
   
   .title-top {
     font-weight: 200;
     font-size: 13px;
-    padding-top: 15px !important; /* Removes default margin */
+    padding-top: 15px !important; 
     font-style: italic;
   }
 
   .title-bottom {
     font-weight: 200;
     font-size: 13px;
-    margin-top: 0; /* Removes default margin */
+    margin-top: 0; 
     font-style: italic;
     line-height: 10px;
-    padding-bottom: 15px !important; /* Removes default margin */
+    padding-bottom: 15px !important; 
   }
 
   .action-buttons {
@@ -180,45 +182,45 @@ ion-card-subtitle {
   }
 
   .adopt {
-    --background: #e29824; /* Set the background color */
+    --background: #e29824; 
     border: 2px solid#652e89;
-    color: #652e89; /* Set the text color */
-    text-transform: lowercase; /* Capitalize the first letter of each word */
+    color: #652e89; 
+    text-transform: lowercase; 
     font-size: 16px;
     font-weight: 900;
   }
 
   .adopt:hover {
-    --background: #652e89; /* Set the background color */
+    --background: #652e89; 
     border: 2px solid#652e89;
-    color: white; /* Set the text color */
-    text-transform: lowercase; /* Capitalize the first letter of each word */
+    color: white; 
+    text-transform: lowercase; 
     font-size: 16px;
     font-weight: 900;
   }
 
   ion-button.adopt span::first-letter {
-    text-transform: uppercase; /* Capitalize only the first letter */
+    text-transform: uppercase; 
   }
 
   .watch {
-    --background: transparent; /* Set the background color */
+    --background: transparent; 
     --border-width: 3px;
   --border-style: solid;
   --border-color: #e29824;
-    color: white; /* Set the text color */
-    text-transform: capitalize; /* Capitalize the first letter of each word */
+    color: white; 
+    text-transform: capitalize;
     font-size: 14px;
     font-weight: 900;
   }
 
   .watch:hover {
-    --background: #e29824; /* Set the background color */
+    --background: #e29824; 
     --border-width: 3px;
   --border-style: solid;
   --border-color: #e29824;
-    color: #652e89; /* Set the text color */
-    text-transform: capitalize; /* Capitalize the first letter of each word */
+    color: #652e89; 
+    text-transform: capitalize; 
     font-size: 14px;
     font-weight: 900;
   }

@@ -1,27 +1,119 @@
-<ion-header>
-    <ion-title>Pet Profile</ion-title>
-</ion-header>
-
-<ion-content>
-  <img [src]="pet.image" alt="{{ pet.name }}" />
-  <div class="pet-details">
-    <h1>{{ pet.name }}</h1>
-    <h2>{{ pet.age }} years old | {{ pet.gender }} | {{ pet.size }}</h2>
-    <p class="pet-story">{{ pet.story }}</p>
-
-    <div class="medical-history">
-      <div *ngFor="let item of medicalHistory">
-        <ion-icon [name]="item.icon" class="icon"></ion-icon>
-        {{ item.label }}
-      </div>
+<ion-content class="color">
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="arrow-back"></ion-icon>
     </div>
-
-    <div class="personality-traits">
-      <h3>Motty Personality</h3>
-      <div *ngFor="let trait of pet.personalityTraits" class="trait">
-        <span class="trait-name">{{ trait.name }}</span>
-        <div class="trait-value" [style.width]="trait.value * 100 + '%'"></div>
-      </div>
+    <div id="logo">
+      <img src="../../../assets/images/dog1.png" alt="Logo">
     </div>
   </div>
+
+  <ion-card class="ion-padding">
+    <ion-card-content>
+      <p class="my-header">Motty</p>
+      <p class="story"><strong>Birthdate: </strong>{{ pet.birthdate }}</p>
+      <p class="story">{{ pet.story }}</p>
+      <div>
+        <ion-button class="category">
+          {{pet.category}}
+        </ion-button>
+        <ion-button class="classification">
+          {{pet.classification}}
+        </ion-button>
+        <ion-button class="gender">
+          {{pet.gender}}
+        </ion-button>
+        <ion-button class="size">
+          {{pet.size}}
+        </ion-button>
+        <ion-button class="breed">
+          {{pet.breed}}
+        </ion-button>
+      </div>
+      <!-- Adding a table inside ion-card -->
+      <p class="my-meds">Pet Immunization History</p>
+      <table style="width: 100%; margin-top: 5px; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th class="title-meds">Date given</th>
+            <th class="title-meds">Type</th>
+            <th class="title-meds">Information</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="meds">Category</td>
+            <td class="meds">{{ pet.category }}</td>
+            <td class="meds">{{ pet.category }}</td>
+          </tr>
+          <tr>
+            <td class="meds">Classification</td>
+            <td class="meds">{{ pet.classification }}</td>
+            <td class="meds">{{ pet.category }}</td>
+          </tr>
+          <tr>
+            <td class="meds">Gender</td>
+            <td class="meds">{{ pet.gender }}</td>
+            <td class="meds">{{ pet.category }}</td>
+          </tr>
+          <tr>
+            <td class="meds">Size</td>
+            <td class="meds">{{ pet.size }}</td>
+            <td class="meds">{{ pet.category }}</td>
+          </tr>
+          <tr>
+            <td class="meds">Breed</td>
+            <td class="meds">{{ pet.breed }}</td>
+            <td class="meds">{{ pet.category }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="my-meds">Pet Medical History</p>
+
+      <table style="width: 100%; margin-top: 5px; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th class="title-meds">Date</th>
+            <th class="title-meds">Diagnosis</th>
+            <th class="title-meds">Treatment</th>
+            <th class="title-meds">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="meds">Category</td>
+            <td class="meds">{{ pet.category }}</td>
+            <td class="meds">{{ pet.category }}</td>
+            <td class="meds">{{ pet.category }}</td>
+          </tr>
+          <tr>
+            <td class="meds">Classification</td>
+            <td class="meds">{{ pet.classification }}</td>
+            <td class="meds">{{ pet.category }}</td>
+            <td class="meds">{{ pet.category }}</td>
+          </tr>
+          <tr>
+            <td class="meds">Gender</td>
+            <td class="meds">{{ pet.gender }}</td>
+            <td class="meds">{{ pet.category }}</td>
+            <td class="meds">{{ pet.category }}</td>
+          </tr>
+          <tr>
+            <td class="meds">Size</td>
+            <td class="meds">{{ pet.size }}</td>
+            <td class="meds">{{ pet.category }}</td>
+            <td class="meds">{{ pet.category }}</td>
+          </tr>
+          <tr>
+            <td class="meds">Breed</td>
+            <td class="meds">{{ pet.breed }}</td>
+            <td class="meds">{{ pet.category }}</td>
+            <td class="meds">{{ pet.category }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>
