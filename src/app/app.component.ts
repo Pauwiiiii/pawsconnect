@@ -153,14 +153,21 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
 
   signOut() {
     this.loadingservice.showLoading("Signing Out");
+    
+    // Clear storage
     this.storageservice.clearStorage();
+    
+    // Reset profile information
+    this.profile.name = "";
+    this.profile.email = "";
+  
+    // Detect changes to update the UI
+    this.changesres.detectChanges();
+  
     setTimeout(() => {
       this.loadingservice.dismiss();
-      this.changesres.detectChanges();
       this.navCtrl.navigateRoot('/home'); 
     }, 3000);
-
-    // this.authService.logout(); // Call the logout function from AuthService
-    // Redirect to the login page after signing out
-  }
+  }  // this.authService.logout(); // Call the logout function from AuthService
+  // Redirect to the login page after signing out
 }

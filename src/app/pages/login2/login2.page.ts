@@ -30,6 +30,12 @@ export class Login2Page {
    passwordType: string = 'password';
    passwordIcon: string = 'eye-off';
 
+   public profile = {
+    name: "",
+    email: ""
+   // Placeholder na data; palitan ng fetched data kung kailangan
+  };
+
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -69,6 +75,7 @@ export class Login2Page {
 
     // ionic login spinner tip - https://ionicframework.com/docs/api/loading ( i do recommend must be controlled by controller)
     
+    // this.toasterservice.presentToast("Authentication Failed")
     this.loadingservice.showLoading("Signing-in"); //  Handle loading from loading service
 
     let loginUrl = environment.apiRoute + "/login.php";
@@ -89,6 +96,50 @@ export class Login2Page {
       // HANDLE ERROR
       // SHOW DIALOG TO USER
     });
+  }
 
+  // async loginWithEmailPassword() {
+  //   if (!this.email) {
+  //     this.emailError = true;
+  //     this.passwordError = false;
+  //     return;
+  //   }
+  //   if (!this.password) {
+  //     this.passwordError = true;
+  //     this.emailError = false;
+  //     return;
+  //   }
+  
+  //   this.loadingservice.showLoading("Signing-in");
+  
+  //   let loginUrl = environment.apiRoute + "/login.php";
+  //   try {
+  //     const result: any = await this.requestservice.post(loginUrl, {
+  //       email: this.email,
+  //       password: this.password,
+  //       apikey: environment.apiKey     
+  //     });
+  
+  //     // Store data in storage with 'await' to ensure completion
+  //     await this.storageservice.setStorage("name", result.name);
+  //     await this.storageservice.setStorage("email", result.email);
+  //     await this.storageservice.setStorage("userid", result.userid);
+  
+  //     // Directly update the profile object to reflect changes immediately in the UI
+  //     this.profile.name = result.name;
+  //     this.profile.email = result.email;
+  
+  //     // Dismiss loading and trigger change detection for immediate UI update
+  //     this.loadingservice.dismiss();
+  //     this.changesdetector.detectChanges();
+  //     this.router.navigate(["home"]);
+  //   } catch (error) {
+  //     // Handle login error
+  //     this.loadingservice.dismiss();
+  //     this.toasterservice.presentToast("Authentication Failed", 5000, "top");
+  //   }
+  // }
+  
+  
 }
-}
+
