@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Filter</ion-title>
+    <ion-title>Filter  Customization  Questionnaire
+    </ion-title>
     <ion-buttons slot="end">
       <ion-button fill="clear" (click)="dismiss()">
         <ion-icon name="close-outline" color="light"></ion-icon>
@@ -13,10 +14,11 @@
   <ion-list>
     <!-- Species Filter -->
     <ion-item>
-      <ion-label>Species</ion-label>
+      <ion-label>Category</ion-label>
       <ion-select [(ngModel)]="selectedSpecies" placeholder="Select species">
         <ion-select-option value="dog">Dog</ion-select-option>
         <ion-select-option value="cat">Cat</ion-select-option>
+        <ion-select-option value="cat">Both</ion-select-option>
       </ion-select>
     </ion-item>
 
@@ -26,23 +28,24 @@
       <ion-select [(ngModel)]="selectedGender" placeholder="Select gender">
         <ion-select-option value="male">Male</ion-select-option>
         <ion-select-option value="female">Female</ion-select-option>
+        <ion-select-option value="both">Both</ion-select-option>
       </ion-select>
     </ion-item>
 
     <!-- Age Range Filter -->
     <ion-item>
-      <ion-label>Age</ion-label>
-      <ion-select [(ngModel)]="selectedAgeRange" placeholder="Select age range">
-        <ion-select-option value="1-12">1-12 months</ion-select-option>
-        <ion-select-option value="1-6">1-6 years</ion-select-option>
-        <ion-select-option value="7+">7 years and above</ion-select-option>
+      <ion-label>Classification</ion-label>
+      <ion-select [(ngModel)]="selectedAgeRange" placeholder="Select classification">
+        <ion-select-option value="7+">Senior</ion-select-option>
+        <ion-select-option value="1-6">Adult</ion-select-option>
+        <ion-select-option value="1-12">Puppy/Kitten</ion-select-option>
       </ion-select>
     </ion-item>
 
     <!-- Kind Filter -->
     <ion-item>
-      <ion-label>Kind</ion-label>
-      <ion-select [(ngModel)]="selectedKind" placeholder="Select kind">
+      <ion-label>Size</ion-label>
+      <ion-select [(ngModel)]="selectedKind" placeholder="Select size">
         <ion-select-option value="small">Small</ion-select-option>
         <ion-select-option value="medium">Medium</ion-select-option>
         <ion-select-option value="large">Large</ion-select-option>
@@ -51,5 +54,12 @@
   </ion-list>
 
   <!-- Apply Filters Button -->
-  <ion-button expand="full" color="secondary" (click)="applyFilters()">Apply Filters</ion-button>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="11.7">
+      <ion-button expand="block" class="buttons" (click)="applyFilters()">
+        <span>Apply Filters</span>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  
 </ion-content>

@@ -15,7 +15,6 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
   public headerTitle: string = ''; // Dynamic na header title
   unreadNotificationsCount: number = 0; // Counter para sa unread notifications
   @ViewChild(IonTabs) tabRef!: IonTabs;
-
   public homeTabClass: string = '';
   showHeader: boolean = true; // Control para sa visibility ng header
   showBottomBar: boolean = true; // Control para sa visibility ng bottom bar
@@ -144,18 +143,12 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
       this.headerTitle = ''; 
     }
   }
-
-  // Navigate sa profile page
   goToProfile() {
     this.navCtrl.navigateRoot('/profile');
   }
-
-  // Navigate sa notification page
   openNotifications() {
     this.navCtrl.navigateRoot('/notification');
   }
-
-  // Close ang main menu
   closeMenu() {
     this.menuCtrl.close('main-menu');
   }

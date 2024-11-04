@@ -1,16 +1,55 @@
 .half-screen-modal {
-    --border-radius: 10px;
+    --border-radius: 20px;
     --background: var(--ion-color-primary);
     --color: rgb(255, 255, 255);
   }
   
   .half-screen-modal .modal-wrapper {
-    border-radius: 15px 15px 0 0; // Rounded corners at the top
-    background: var(--ion-color-primary); // The modal bg
-    color: var(--ion-color-light); // Text color inside the modal
+    border-radius: 15px 15px 0 0; 
+   --background: var(--ion-color-primary); 
+    color: var(--ion-color-light);
   }
   
   .half-screen-modal .modal-content {
     padding: 16px;
   }
   
+ion-button.buttons {
+  width: 100%; 
+  height: 45px; 
+  --border-radius: 12px; 
+  font-size: 16px; 
+  font-weight: 900;
+  text-transform: lowercase; 
+  color: white; 
+  --background: #e29824; 
+  --color: white; 
+  margin-top: 8px;
+  display: flex !important; 
+  justify-content: center !important; 
+  align-items: center !important; 
+  --box-shadow: none;
+  --ion-button-shadow: none;
+}
+
+ion-button.buttons span::first-letter {
+  text-transform: uppercase; 
+}
+
+ion-button.buttons:hover {
+  --background: #652e89; 
+  color: white; 
+  font-weight: 700 !important;
+}
+
+
+ion-title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+ion-label {
+  font-weight: 700;
+  font-family: "Gilroy" !important;
+}
+

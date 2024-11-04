@@ -30,13 +30,16 @@
         <ion-input type="password" placeholder="Confirm password" required></ion-input>
       </ion-item>
   
-      <ion-button class="submit" expand="block" type="submit">
+      <ion-button class="submit" expand="block" type="submit" (click)="navigateToOnboarding()">
         Sign up
       </ion-button>
 
       <p class="footer-text">Already have an account?<a routerLink="#">Login</a></p>
-      <p class="term-text">I agree to all statements in the Terms of Use <br> 
-        and Privacy Policy?</p>
+      <p class="term-text">
+        I agree to all statements in the <br>
+        <a (click)="navigateToTermcons1()" class="term-link">Terms of Use and Privacy Policy?</a>
+        <ion-checkbox slot="end" (click)="navigateToTermcons1()"></ion-checkbox>
+      </p>
     </form>
   </ion-content>
   
