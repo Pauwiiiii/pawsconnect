@@ -1,7 +1,9 @@
-
 <ion-content class="color">
   <div id="header">
-    <!-- <ion-back-button defaultHref="/home" icon="arrow-back-outline" slot="start"></ion-back-button> -->
+    <div id="app-bar">
+      <ion-back-button defaultHref="/home" icon="arrow-back-outline" slot="start"></ion-back-button>
+    </div>
+
     <div id="logo">
       <img src="../../../assets/images/logo.png" alt="Logo">
       <h2>PawsConnect</h2>
@@ -10,23 +12,21 @@
 
   <ion-card class="ion-padding">
     <ion-card-content>
-        <h1>Welcome to PawsConnect</h1>
-        <p>Bringing compassionate hearts <br>together with loving paws.</p>
+      <h1>Welcome to PawsConnect</h1>
+      <p>Bringing compassionate hearts <br>together with loving paws.</p>
 
-        <ion-button class="signin" expand="block" (click)="navigateToLogin2()">Login</ion-button>
-        <ion-button class="signup" expand="block" (click)="navigateToSignup()">Sign up</ion-button>
+      <ion-button class="signin" expand="block" (click)="navigateToLogin2()">Login</ion-button>
+      <ion-button class="signup" expand="block" (click)="navigateToSignup()">Sign up</ion-button>
 
-        <div class="line-text">
-          <span class="lines"></span>
-          <span class="text"> or connect using</span>
-        </div>
+      <div class="line-text">
+        <span class="lines"></span>
+        <span class="text"> or connect using</span>
+      </div>
 
-        <ion-button class="google" expand="block">
-          <img src="../../../assets/images/google.png" alt="Google Logo" style="width: 24px; height: 24px; margin-right: 8px;">
-          Sign in with Google
-        </ion-button>
-      
-        
+      <ion-button class="google" expand="block">
+        <img src="../../../assets/images/google.png" alt="Google Logo" style="width: 24px; height: 24px; margin-right: 8px;">
+        Sign in with Google
+      </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

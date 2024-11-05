@@ -40,3 +40,19 @@
 * {
   font-family: Gilroy;
 }
+
+#app-bar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start; /* Aligns items to the left */
+  padding: 0px 0px; /* Adjust padding as needed */
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10; /* Ensures the back button is on top */
+}
+
+#app-bar ion-back-button {
+  font-size: 28px;
+}

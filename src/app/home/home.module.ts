@@ -8,14 +8,17 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { FilterPageModule } from '../pages/filter/filter.module'; 
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    FilterPageModule 
+    FilterPageModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomePageModule {}

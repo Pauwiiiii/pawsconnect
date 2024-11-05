@@ -15,6 +15,7 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
   public headerTitle: string = ''; // Dynamic na header title
   unreadNotificationsCount: number = 0; // Counter para sa unread notifications
   @ViewChild(IonTabs) tabRef!: IonTabs;
+
   public homeTabClass: string = '';
   showHeader: boolean = true; // Control para sa visibility ng header
   showBottomBar: boolean = true; // Control para sa visibility ng bottom bar
@@ -38,7 +39,7 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
 
     
     // Nakikinig sa navigation events para i-update ang header at bottom bar
-    this.router.events.subscribe((event) => {
+ this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.updateHeaderTitle(event.url);
       }
@@ -49,6 +50,12 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
     if (this.router.url == '/') {
       this.tabRef.select('home');
       this.homeTabClass = 'activated';
+    }
+  }
+
+  async ionTabChange() {
+    if (this.tabRef.getSelected() != 'home') {
+      this.homeTabClass = '';
     }
   }
 
@@ -81,13 +88,6 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
 
   ionViewWillEnter() {
     
-  }
-
-
-  async ionTabChange() {
-    if (this.tabRef.getSelected() != 'home') {
-      this.homeTabClass = '';
-    }
   }
 
   // Dynamic na pag-update ng header title at bottom bar visibility

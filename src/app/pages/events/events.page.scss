@@ -1,34 +1,209 @@
 .event-content {
-    --background: var(--ion-color-light);
-    padding: 16px;
+  --background: var(--ion-color-light);
+  margin-top: 100px;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.centered-text h2 {
+  font-size: 20px; 
+  font-weight: 650;
+  color: #333;
+  margin-top: 25px!important; 
+  text-align: left;
+  margin-left: 25px;
+}
+
+.centered-text p {
+  font-size: 16px; 
+  color: #666;
+  margin-top: 5px;
+  line-height: 20px;
+}
+
+.card-container {
+  display: flex;         
+  justify-content: space-between; 
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+ion-card.events {
+  flex: 1;                  
+  max-width: 50%;          
+  border-radius: 10px;
+}
+
+ion-card-content {
+  text-align: justify;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+ion-card-title {
+  font-weight: 650;
+  font-size: 18px;
+}
+
+ion-card-subtitle {
+  font-size: 15px;
+  text-align: justify;
+}
+
+.info1 {
+  margin: 3px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.info {
+  margin: 3px;
+  font-size: 14px;
+}
+
+ion-card-header {
+  padding-bottom: 5px;
+}
+
+.event-image {
+  width: 100%;               /* Make the image responsive */
+  max-width: 400px;         /* Set a maximum width */
+  height: 150px;             /* Maintain aspect ratio */
+  display: block;           /* Ensure it behaves as a block element */
+  margin: 0 auto;           /* Center the image */
+}
+
+.pques {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+ion-content {
+  --background: #ffffff; /* Soft background */
+}
+
+.faq-item {
+  --background: #ffffff;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  padding: 5px;
+  width: auto;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+ion-label p {
+  font-size: 14px !important;
+  color: #333333;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+ion-icon {
+  font-size: 24px;
+  color: #e29824;
+  margin: 0;
+  padding: 0;
+}
+
+.top-section {
+  min-height: 240px;
+  background-color: #652e89;
+  padding-bottom: 30px; 
+
+  .title {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    color: white;
+    padding-left: 15px;
   }
   
-  .event-card {
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 12px 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .title h2 {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 0; 
+    padding-top: 40px; 
+    letter-spacing: 0.01rem;
   }
-  
-  .event-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+
+  .title-bottom {
+    font-weight: 200;
+    font-size: 13px;
+    margin-top: 0; 
+    font-style: italic;
+    line-height: 10px;
+    padding-bottom: 15px !important; 
   }
-  
-  ion-card-title {
-    color: var(--ion-color-primary);
-    font-weight: bold;
-    font-size: 1.2rem;
+
+}
+
+
+ion-card-content.eventstop {
+  padding-bottom: 0;
+  padding-top: 5px;
+}
+.wrapper {
+  position: absolute;
+  top: 20%;
+  left: 4%;
+  right: 4%;
+
+  .form-wrapper {
+    box-shadow: none;
+    border-radius: 20px;
+    padding: 15px 10px;
+    background-color: white;
+    margin-bottom: 150px;
   }
-  
-  ion-card-subtitle {
-    color: black;
-    font-size: 0.9rem;
+  .title-top {
+    font-weight: 500;
+    font-size: 18px;
+    padding-top: 5px !important; 
+    margin-top: 0;
+    margin-bottom: 10px; 
+    color: #ffffff;
   }
-  
-  ion-card-content p {
-    color: var(--ion-color-dark);
-    font-size: 1rem;
-    text-align: justify;
+
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+    margin-bottom: 0;
   }
-  
+
+  ion-icon {
+    margin-right: 13px;
+    font-size: 29px;
+  }
+
+  .adopt {
+    --background: #652e89; 
+    color: white; 
+    text-transform: initial; 
+    font-size: 16px;
+    font-weight: 900;
+    border-radius: 10px;
+  }
+
+  .adopt:hover {
+    --background: #652e89; 
+    color: white; 
+    text-transform: initial; 
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  }

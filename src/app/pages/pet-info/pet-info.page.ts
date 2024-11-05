@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-pet-info',
@@ -21,7 +22,7 @@ export class PetInfoPage implements OnInit {
 
   medicalHistory: Array<{ label: string; icon: string }>;
 
-  constructor() {
+  constructor(private navCtrl: NavController) {
     // Initializing pet data
     this.pet = {
       name: 'Motty',
@@ -58,5 +59,9 @@ export class PetInfoPage implements OnInit {
 
   ngOnInit() {
     // Any additional initialization logic can go here
+  }
+
+  goTohome() {
+    this.navCtrl.navigateForward('/home');
   }
 }

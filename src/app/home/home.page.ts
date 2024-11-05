@@ -9,6 +9,11 @@ import { FilterPage } from '../pages/filter/filter.page';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+    slideOpts = {
+      initialSlide: 0,
+      speed: 400,
+    };
+
   pets = [
     { name: 'Tommy', species: 'dog', kind: 'small', age: 7, gender: 'Male', image: 'assets/images/dog1.png' },
     { name: 'Alfred', species: 'cat', kind: 'medium', age: 4, gender: 'Male', image: 'assets/images/cat1.png' },
@@ -94,6 +99,4 @@ export class HomePage {
   goToAbout() {
     this.navCtrl.navigateForward('/about');
   }
-
-  
 }
